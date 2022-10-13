@@ -1,8 +1,20 @@
-import logo from '../../logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 import Navbar from '.././Navbar/Navbar';
+import movieData from '../../MockMovieData.js';
+import Movies from '.././Movies/Movies'
 
-function App() {
+class App extends Component{
+  constructor(){
+    super(); 
+    this.state = {
+      movies:[movieData]
+    }
+  }
+
+
+render() {
+  console.log(this.state.movies)
   return (
     <div className="App">
       <header> 
@@ -10,10 +22,10 @@ function App() {
         <Navbar />
       </header>
       <main >
-        
+        <Movies />
       </main>
     </div>
   );
 }
-
+}
 export default App;
