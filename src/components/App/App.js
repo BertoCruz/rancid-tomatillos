@@ -8,13 +8,13 @@ class App extends Component{
   constructor(){
     super(); 
     this.state = {
-      movies:[movieData]
+      movies:[movieData.movies]
     }
   }
 
 
 render() {
-  console.log(this.state.movies)
+  // console.log(this.state.movies)
   return (
     <div className="App">
       <header> 
@@ -22,7 +22,7 @@ render() {
         <Navbar />
       </header>
       <main >
-        <Movies />
+        <Movies movieData = {this.state.movies} />
       </main>
     </div>
   );
