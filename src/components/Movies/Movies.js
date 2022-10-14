@@ -1,10 +1,13 @@
 import React from "react";
 
-const Movies = () => {
-    return (
-        <h1>Here is movies</h1>
-    )
+const Movies = ({movieData}) => {
+    const movieCards = movieData.map(movie => {
+        return (
+             <h1></h1>
+        )
 
+    })
+    return movieCards 
 }
 
 
