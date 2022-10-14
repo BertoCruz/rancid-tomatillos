@@ -12,7 +12,7 @@ const Movies = ({movieData}) => {
                 id= {movie.id}
              />
         )
-    })
+    }) 
 
     return (
         <div className='movie-container'>
