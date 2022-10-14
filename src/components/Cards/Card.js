@@ -3,9 +3,11 @@ import './Card.css'
 
 const Card = ({poster, title }) => {
     return (
-        <div className ="card">
-            <img src = {poster}></img>
-            <h1> {title} </h1>
+        <div className ="movie-card">
+            <div className="poster-container">
+                <img src = {poster}></img>
+            </div>
+            <p> {title} </p>
         </div>
     )
     

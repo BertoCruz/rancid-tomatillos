@@ -18,7 +18,7 @@ console.log(this.state.movies)
   return (
     <div className="App">
       <header> 
-      <h1>Rancid Tomatillos</h1>
+        <h1>Rancid Tomatillos</h1>
         <Navbar />
       </header>
       <main >
