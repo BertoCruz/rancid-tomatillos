@@ -1,0 +1,90 @@
+:root {
+    --clr-fontClr: #248232;
+    --clr-mainBackground: #2d3a3a;
+    --clr-accent: #2ba84a;
+    --clr-offWhite: #FAF9F6;
+  }
+
+.movie-detail-container {
+    display: flex;
+    max-height: 100vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.movie-detail-section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.backdrop-img-container {
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.backdrop-img-container img {
+    height: auto;
+    inline-size: 100%;
+    object-fit: cover;
+}
+
+
+/* movie info container */
+.movie-info-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+/* movie poster container */
+.movie-poster-container {
+    height: 100%;
+    max-width: 15rem;
+}
+
+.movie-poster-container img{
+    height: auto;
+    inline-size: 100%;
+    object-fit: cover;
+}
+
+/* movie description */
+
+.movie-description-container {
+    width: 70%;
+    height: 100%;
+}
+
+.release-date {
+    font-size: .9rem;
+}
+
+.overview {
+    font-size: .9rem;
+}
+
+.avg-rating {
+    font-size: .9rem;
+}
+
+.genre {
+    font-size: .9rem;
+}
+
+.budget {
+    font-size: .9rem;
+}
+
+.revenue {
+    font-size: .9rem;
+}
+
+.runtime {
+    font-size: .9rem;
+}
+
+.tagline {
+    font-size: .9rem;
+}

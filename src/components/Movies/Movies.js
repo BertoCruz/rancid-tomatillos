@@ -3,7 +3,7 @@ import Card from '../Cards/Card.js'
 import './Movies.css'
 
 const Movies = ({movieData}) => {
-    const movieCards = movieData[0].map(movie => {
+    const movieCards = movieData.map(movie => {
         return (
              <Card 
                 title= {movie.title}

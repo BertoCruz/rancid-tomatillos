@@ -3,12 +3,13 @@ import './App.css';
 import Navbar from '.././Navbar/Navbar';
 import movieData from '../../MockMovieData.js';
 import Movies from '.././Movies/Movies'
+import MovieInfo from '.././MovieInfo/MovieInfo'
 
 class App extends Component{
   constructor(){
     super(); 
     this.state = {
-      movies:[movieData.movies]
+      movies:movieData.movies
     }
   }
 
@@ -23,6 +24,7 @@ console.log(this.state.movies)
       </header>
       <main >
         <Movies movieData = {this.state.movies} />
+        <MovieInfo />
       </main>
     </div>
   );
