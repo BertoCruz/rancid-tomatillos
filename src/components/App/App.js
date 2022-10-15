@@ -4,6 +4,7 @@ import Navbar from '.././Navbar/Navbar';
 // import movieData from '../../MockMovieData.js';
 import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
+import {useState} from "react"
 
 
 class App extends Component{
@@ -11,7 +12,7 @@ class App extends Component{
     super(); 
     this.state = {
       movies:[], 
-      individualMovie: [
+      individualMovie:[]
         // {"movie": {
         // id: 1, 
         // title: "Fake Movie Title", 
@@ -26,8 +27,9 @@ class App extends Component{
         // runtime:139, 
         // tagline: "It's a movie!" 
         // }}
-      ]
     }
+    this.isClicked = false;
+    // let [buttonPopup, setButtonPopup] = useState(false);
   }
 
 componentDidMount(){
@@ -36,18 +38,20 @@ componentDidMount(){
   .then(data => this.setState({movies:data.movies}))
 }
 
-getIndividualMovie(id){
+getIndividualMovie = (id) => {
+  // let [buttonPopup, setButtonPopup] = useState(false);
+  this.isClicked = true;
   console.log(id)
   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
   .then(response => response.json())
-  .then(data => this.setState({individualMovie:data}))
+  .then(data => this.setState({individualMovie:data.movie}))
   .then(data => console.log(data.movie))
   .catch(error => console.log(error))
+  // setButtonPopup(true);
 }
 
-
 render() {
-  console.log(this.state.individualMovie)
+  console.log("over here", this.state.individualMovie)
   return (
     <div className="App">
       <header> 
@@ -55,9 +59,18 @@ render() {
         <Navbar />
       </header>
       <main >
-        <Movies movieData = {this.state.movies} getDetails ={this.getIndividualMovie} />
-        <MovieInfo movieDetails = {this.state.individualMovie} popup = {false}/>
+        <Movies 
+          movieData = {this.state.movies} 
+          getDetails ={this.getIndividualMovie}
+          // setTriggerPopup = {setButtonPopup} 
+          />
       </main>
+        <MovieInfo 
+          movieDetails = {this.state.individualMovie}  
+          popup = {this.isClicked}
+          // popup = {buttonPopup} 
+          // setTriggerPopup = {setButtonPopup}
+          />
     </div>
   );
 }

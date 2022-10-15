@@ -32,3 +32,26 @@
 - Hunter: We made the `MovieInfo` component along with the CSS!
 
 - Dani: Knocking out the `MovieInfo` component and CSS along with it.
+
+
+
+
+## Saturday 10/15/22
+- Today we created:
+    - finished our fetch calls for rendering all movies to display
+    - our fetch calls for rendering a single movie's details
+    - We got our pop up to display 
+    
+- To Do:
+    - We still need to position our movie details pop up over all of the movies
+    - we still need to create a close pop up feature as well. 
+
+
+### Challenges:
+- Hunter: The entire process behind getting the ID from the `Card.js` we are clicking on to go onto our fetch call found in `App.js`. Also figuring out hooks. understanding conditional rendering.
+- Dani: Challenge was figuring out how to pass along the id of the `Card` component, but it was also coming to the solution of using ES6 arrow functions to access our "this.state". Another thing was trying to figure out how to use hooks to display our pop up feature, which we didn't use in the end, but could perhaps implement it in the future.
+
+### Wins
+- Hunter: Getting the data into our pop up!
+
+- Dani: Understanding the flow of prop process - data down and action up. Also, getting our individual movie data to render on the pop up component. Another was getting to witness our fetch calls working properly!

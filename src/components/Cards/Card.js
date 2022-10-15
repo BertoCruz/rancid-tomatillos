@@ -6,7 +6,7 @@ import './Card.css'
 const Card = ( props ) => {
     // console.log("props.details" ,props.getDetails)
     return (
-        <div className ="movie-card" onClick={() => props.getDetails(props.id)  }>
+        <div className ="movie-card" onClick={() => props.getDetails(props.id)}>
             <div className="poster-container">
                 <img src = {props.poster}></img>
             </div>
