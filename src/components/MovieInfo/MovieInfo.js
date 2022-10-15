@@ -3,7 +3,6 @@ import './MovieInfo.css'
 
 const MovieInfo = (movieDetails) => {
     const move = movieDetails.movieDetails.map(detail => detail.movie)
-    console.log(move[0].title, 'this')
     return (movieDetails.popup) ? (
         <div className="movie-detail-container">
             <section className="movie-detail-section">
