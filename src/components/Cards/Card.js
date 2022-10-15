@@ -1,17 +1,23 @@
 import React from "react";
+import App from "../App/App";
 import './Card.css'
 
-const Card = ({poster, title }) => {
+
+const Card = ( props ) => {
+    console.log(props.getDetails())
     return (
-        <div className ="movie-card">
-            
+        <div className ="movie-card" onClick={props.getDetails(props.id)}>
             <div className="poster-container">
-                <img src = {poster}></img>
+                <img src = {props.poster}></img>
             </div>
-            <p> {title} </p>
+            <p> {props.title} </p>
         </div>
-    )
-    
+    )   
+}
+
+function getMovieDetails (id) {
+   console.log(id)
+  
 }
 
 export default Card
