@@ -25,7 +25,8 @@ class App extends Component{
         revenue:100853753, 
         runtime:139, 
         tagline: "It's a movie!" 
-        }}]
+        }}
+      ]
     }
   }
 
@@ -35,14 +36,18 @@ componentDidMount(){
   .then(data => this.setState({movies:data.movies}))
 }
 
-getIndividualMovie = (id) => {
+getIndividualMovie(id){
+  console.log(id)
   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
   .then(response => response.json())
-  .then(data => this.setState({individualMovie:data}))
+  // .then(data => this.setState({individualMovie:data.movie}))
+  .then(data => console.log(data.movie))
+  .catch(error => console.log(error))
 }
 
+
 render() {
-// console.log(this.state.movies)
+  // console.log(this.state.movies)
   return (
     <div className="App">
       <header> 
@@ -50,12 +55,13 @@ render() {
         <Navbar />
       </header>
       <main >
-        <Movies movieData = {this.state.movies} getDetails ={ ()=> this.getIndividualMovie()} />
+        <Movies movieData = {this.state.movies} getDetails ={this.getIndividualMovie} />
         <MovieInfo movieDetails = {this.state.individualMovie} popup = {true}/>
       </main>
     </div>
   );
 }
 }
+
 
 export default App;

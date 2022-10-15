@@ -3,11 +3,12 @@ import App from "../App/App.js";
 import Card from '../Cards/Card.js'
 import './Movies.css'
 
-const Movies = ({movieData}) => {
+const Movies = ({movieData, getDetails}) => {
     const movieCards = movieData.map(movie => {
         return (
              <Card 
-                // onclick = {App.getIndividualMovie()}
+            //  onClick = {getDetails(movie.id)}
+                getDetails = {getDetails}
                 title= {movie.title}
                 poster= {movie.poster_path}
                 key= {movie.id}
