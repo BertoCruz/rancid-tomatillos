@@ -1,0 +1,8 @@
+.movie-container{ 
+        padding: 20px;
+        display: flex;  
+        flex-wrap: wrap;
+        border: 1px solid red;
+        height: 50%;
+        overflow: scroll;
+}

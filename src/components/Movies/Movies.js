@@ -1,13 +1,24 @@
 import React from "react";
+import Card from '../Cards/Card.js'
+import './Movies.css'
 
 const Movies = ({movieData}) => {
     const movieCards = movieData.map(movie => {
         return (
-             <h1></h1>
+             <Card 
+                title= {movie.title}
+                poster= {movie.poster_path}
+                key= {movie.id}
+                id= {movie.id}
+             />
         )
+    }) 
 
-    })
-    return movieCards 
+    return (
+        <section className='movie-container'>
+            {movieCards}
+        </section>
+        )
 }
 
 
