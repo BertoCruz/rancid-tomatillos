@@ -4,6 +4,7 @@ import Navbar from '.././Navbar/Navbar';
 // import movieData from '../../MockMovieData.js';
 import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
+import ErrorHandle from '../ErrorHandle/ErrorHandle';
 
 
 
@@ -12,7 +13,8 @@ class App extends Component {
     super(); 
     this.state = {
       movies: null, 
-      individualMovie: null
+      individualMovie: null,
+      error: null
     }
     this.isClicked = false;
     this.homepageView = true;
@@ -20,23 +22,35 @@ class App extends Component {
 
 componentDidMount(){
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  .then(response => response.json())
+  .then(response => {
+    if(!response.ok) {
+      throw `${response.status} ${response.statusText}`;
+    } else {
+      return response.json();
+    }
+  })
   .then(data => this.setState({movies:data.movies}))
+  .catch(err => {
+    this.setState({error : err});
+  })
 }
 
 getIndividualMovie = (id) => {
-  // this.showDetails()
+  this.setState({movies: null});
   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-  // .then(response => console.log(response))
-  .then(response => response.json())
-  .then(data => 
-    this.setState({individualMovie: data.movie}),
-    this.setState({movies: null}))
-
-  // .then(data => console.log(data.movie))
-  .catch(error => console.log('there is an error', error))
-  // setButtonPopup(true);
-  // this.showDetails()
+  .then(response => {
+    if(!response.ok) {
+      throw `${response.status} ${response.statusText}`;
+    } else {
+      return response.json();
+    }
+  })
+  .then(data => {
+    this.setState({individualMovie: data.movie});
+  })
+  .catch(err => {
+    this.setState({error : err});
+  });
 }
 
 // showDetails = () => {
@@ -56,11 +70,13 @@ hideDetails = () => {
 render() {
   return (
     <div className="App">
-      <header> 
-        <h1>Rancid Tomatillos</h1>
         <Navbar hideDetails = {this.hideDetails}/>
-      </header>
-      <main >
+        {console.log("OVER HERE====", this.state.error)}
+        {this.state.error && 
+          <ErrorHandle 
+            errorStatus = {this.state.error}/>
+        }
+
         {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
@@ -78,7 +94,6 @@ render() {
           // setTriggerPopup = {setButtonPopup}
           />
         }
-      </main>
     </div>
   );
 }
