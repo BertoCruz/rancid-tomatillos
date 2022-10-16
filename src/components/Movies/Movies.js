@@ -19,11 +19,13 @@ const Movies = ({movieData, getDetails, homepageView }) => {
         )
     }) 
     
-    return (homepageView) ? ( 
+    // return (homepageView) ? ( 
+    return ( 
         <section className='movie-container' >
             {movieCards}
         </section>
-        ) : " "
+        )
+        // ) : " "
 }
 
 

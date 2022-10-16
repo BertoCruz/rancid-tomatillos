@@ -4,7 +4,8 @@ import './MovieInfo.css'
 const MovieInfo = (movieDetails) => {
     // const move = movieDetails.movieDetails.map(detail => detail.movie)
     console.log("MOVIE DETAILS=====", movieDetails.movieDetails.title);
-    return (movieDetails.popup) ? (
+    // return (movieDetails.popup) ? (
+    return (
         <div className="movie-detail-container">
             <section className="movie-detail-section">
                 <div className="backdrop-img-container">
@@ -28,7 +29,8 @@ const MovieInfo = (movieDetails) => {
                 </div>
             </section>
         </div>
-    ) : " "; 
+    ); 
+    // ) : " "; 
 
 }
 

@@ -11,8 +11,8 @@ class App extends Component {
   constructor(){
     super(); 
     this.state = {
-      movies:[], 
-      individualMovie:[]
+      movies: null, 
+      individualMovie: null
     }
     this.isClicked = false;
     this.homepageView = true;
@@ -29,23 +29,28 @@ getIndividualMovie = (id) => {
   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
   // .then(response => console.log(response))
   .then(response => response.json())
-  .then(data => this.setState({individualMovie: data.movie}))
+  .then(data => 
+    this.setState({individualMovie: data.movie}),
+    this.setState({movies: null}))
+
   // .then(data => console.log(data.movie))
   .catch(error => console.log('there is an error', error))
   // setButtonPopup(true);
-  this.showDetails()
+  // this.showDetails()
 }
 
-showDetails = () => {
-  this.isClicked = true
-  this.homepageView = false
-  console.log('im working')
-}
+// showDetails = () => {
+//   this.isClicked = true
+//   this.homepageView = false
+//   console.log('im working')
+// }
+
 hideDetails = () => {
-  this.setState({individualMovie: []})
-  this.isClicked = false
-  this.homepageView = true
-  console.log('hello')
+  this.componentDidMount();
+  this.setState({individualMovie: null});
+  // this.isClicked = false
+  // this.homepageView = true
+  // console.log('hello')
 }
 
 render() {
@@ -56,19 +61,24 @@ render() {
         <Navbar hideDetails = {this.hideDetails}/>
       </header>
       <main >
+        {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
           getDetails ={this.getIndividualMovie}
           homepageView = {this.homepageView}
           // setTriggerPopup = {setButtonPopup} 
           />
-      </main>
+        }
+
+        {this.state.individualMovie &&
         <MovieInfo 
           movieDetails = {this.state.individualMovie}  
-          popup = {this.isClicked}
+          // popup = {this.isClicked}
           // popup = {buttonPopup} 
           // setTriggerPopup = {setButtonPopup}
           />
+        }
+      </main>
     </div>
   );
 }
