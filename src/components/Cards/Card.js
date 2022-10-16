@@ -11,6 +11,7 @@ const Card = ( props ) => {
                 <img src = {props.poster}></img>
             </div>
             <p> {props.title} </p>
+            <p> {props.averageRating}/10</p>
         </div>
     )   
 }

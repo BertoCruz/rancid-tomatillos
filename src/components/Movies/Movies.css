@@ -5,4 +5,5 @@
         border: 1px solid red;
         height: 50%;
         overflow: scroll;
+        justify-content: center;
 }

@@ -3,7 +3,7 @@ import App from "../App/App.js";
 import Card from '../Cards/Card.js'
 import './Movies.css'
 
-const Movies = ({movieData, getDetails, setTriggerPopup}) => {
+const Movies = ({movieData, getDetails, homepageView }) => {
     const movieCards = movieData.map(movie => {
         return (
              <Card 
@@ -13,16 +13,17 @@ const Movies = ({movieData, getDetails, setTriggerPopup}) => {
                 poster= {movie.poster_path}
                 key= {movie.id}
                 id= {movie.id}
-                setTriggerPopup = {setTriggerPopup}
+                averageRating= {movie.average_rating.toFixed(0)}
+                
              />
         )
     }) 
     
-    return (
-        <section className='movie-container'>
+    return (homepageView) ? ( 
+        <section className='movie-container' >
             {movieCards}
         </section>
-        )
+        ) : " "
 }
 
 
