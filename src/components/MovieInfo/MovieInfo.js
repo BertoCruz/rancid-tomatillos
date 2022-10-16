@@ -2,33 +2,35 @@ import React from "react";
 import './MovieInfo.css'
 
 const MovieInfo = (movieDetails) => {
-    const move = movieDetails.movieDetails.map(detail => detail.movie)
-    console.log(move[0].title, 'this')
-    return (movieDetails.popup) ? (
+    // const move = movieDetails.movieDetails.map(detail => detail.movie)
+    console.log("MOVIE DETAILS=====", movieDetails.movieDetails.title);
+    // return (movieDetails.popup) ? (
+    return (
         <div className="movie-detail-container">
             <section className="movie-detail-section">
                 <div className="backdrop-img-container">
-                    <img src= {move[0].backdrop_path}></img>
+                    <img src= {movieDetails.movieDetails.backdrop_path}></img>
                 </div>
                 <div className="movie-info-container">
                     <div className="movie-poster-container">
-                        <img src={move[0].poster_path}></img>
+                        <img src={movieDetails.movieDetails.poster_path}></img>
                     </div>
                     <div className="movie-description-container">
-                        <h2 className="movie-title"> {move[0].title}</h2>
-                        <p className="release-date">{move[0].release_date}</p>
-                        <p className="overview">{move[0].overview}</p>
-                        <p className="avg-rating">{move[0].average_rating}</p>
-                        <p className="genre">{move[0].genres}</p>
-                        <p className="budget">{move[0].budget}</p>
-                        <p className="revenue">{move[0].revenue}</p>
-                        <p className="runtime">{move[0].runtime}</p>
-                        <p className="tagline">{move[0].tagline}</p>
+                        <h2 className="movie-title"> {movieDetails.movieDetails.title}</h2>
+                        <p className="release-date">{movieDetails.movieDetails.release_date}</p>
+                        <p className="overview">{movieDetails.movieDetails.overview}</p>
+                        <p className="avg-rating">{movieDetails.movieDetails.average_rating}</p>
+                        <p className="genre">{movieDetails.movieDetails.genres}</p>
+                        <p className="budget">{movieDetails.movieDetails.budget}</p>
+                        <p className="revenue">{movieDetails.movieDetails.revenue}</p>
+                        <p className="runtime">{movieDetails.movieDetails.runtime}</p>
+                        <p className="tagline">{movieDetails.movieDetails.tagline}</p>
                     </div>
                 </div>
             </section>
         </div>
-    ) : " "; 
+    ); 
+    // ) : " "; 
 
 }
 

@@ -1,11 +1,13 @@
 import React from "react";
 import './Navbar.css'
 
-function Navbar(){
+function Navbar(props){
     return (
-    
     <nav className="Navbar">
-        <button> Home</button>
+        <button 
+            onClick={() => props.hideDetails()}> 
+            Home 
+        </button>
     </nav>
     )
 }
