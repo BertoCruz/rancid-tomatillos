@@ -56,11 +56,7 @@ hideDetails = () => {
 render() {
   return (
     <div className="App">
-      <header> 
-        <h1>Rancid Tomatillos</h1>
         <Navbar hideDetails = {this.hideDetails}/>
-      </header>
-      <main >
         {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
@@ -78,7 +74,6 @@ render() {
           // setTriggerPopup = {setButtonPopup}
           />
         }
-      </main>
     </div>
   );
 }

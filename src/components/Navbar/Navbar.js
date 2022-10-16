@@ -3,12 +3,15 @@ import './Navbar.css'
 
 function Navbar(props){
     return (
-    <nav className="Navbar">
-        <button 
-            onClick={() => props.hideDetails()}> 
-            Home 
-        </button>
-    </nav>
+        <header>
+            <h1>Rancid Tomatillos</h1>
+            <nav className="Navbar">
+                <button 
+                    onClick={() => props.hideDetails()}> 
+                    Home 
+                </button>
+            </nav>
+        </header>
     )
 }
 

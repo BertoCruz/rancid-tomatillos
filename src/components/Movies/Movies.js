@@ -14,16 +14,17 @@ const Movies = ({movieData, getDetails, homepageView }) => {
                 key= {movie.id}
                 id= {movie.id}
                 averageRating= {movie.average_rating.toFixed(0)}
-                
              />
         )
     }) 
     
     // return (homepageView) ? ( 
     return ( 
-        <section className='movie-container' >
-            {movieCards}
-        </section>
+        <main>
+            <section className='movie-container' >
+                {movieCards}
+            </section>
+        </main>
         )
         // ) : " "
 }
