@@ -12,7 +12,7 @@ class App extends Component {
   constructor(){
     super(); 
     this.state = {
-      movies: null, 
+      movies: [], 
       individualMovie: null,
       error: null
     }
@@ -130,7 +130,7 @@ render() {
         }
 
      <Route path='/'>
-        <Movies movieData ={this.state.movies}/>
+        <Movies movieData ={this.state.movies} getDetails ={this.getIndividualMovie}/>
      </Route>
      {/* <Route path='/' component={Movies}/>   */}
       {/* getDetails ={this.getIndividualMovie} */}
