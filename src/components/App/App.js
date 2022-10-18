@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-import Navbar from '.././Navbar/Navbar';
+// import Navbar from '.././Navbar/Navbar';
 // import movieData from '../../MockMovieData.js';
 import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
 import ErrorHandle from '../ErrorHandle/ErrorHandle';
-
+import { Route, NavLink } from 'react-router-dom'
 
 
 class App extends Component {
@@ -70,13 +70,22 @@ hideDetails = () => {
 render() {
   return (
     <div className="App">
-        <Navbar hideDetails = {this.hideDetails}/>
+        <header>
+          <h1>Rancid Tomatillos</h1>
+          <nav className="Navbar"  >
+            <NavLink 
+                to='/' 
+                onClick={() => this.hideDetails()}> 
+                Home 
+            </NavLink>
+          </nav>
+        </header>
         {console.log("OVER HERE====", this.state.error)}
         {this.state.error && 
           <ErrorHandle 
             errorStatus = {this.state.error}/>
         }
-
+        
         {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
@@ -98,6 +107,12 @@ render() {
   );
 }
 }
+
+
+
+
+{/* 
+        <Navbar hideDetails = {this.hideDetails}/> */}
 
 
 export default App;
