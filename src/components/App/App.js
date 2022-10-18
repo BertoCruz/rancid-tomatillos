@@ -13,7 +13,7 @@ class App extends Component {
     super(); 
     this.state = {
       movies: [], 
-      individualMovie: null,
+      individualMovie: [],
       error: null
     }
     this.isClicked = false;
@@ -36,7 +36,7 @@ componentDidMount(){
 }
 
 getIndividualMovie = (id) => {
-  this.setState({movies: null});
+  this.setState({movies: []});
   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
   .then(response => {
     if(!response.ok) {
@@ -62,7 +62,7 @@ getIndividualMovie = (id) => {
 
 hideDetails = () => {
   this.componentDidMount();
-  this.setState({individualMovie: null});
+  this.setState({individualMovie: []});
   // this.isClicked = false
   // this.homepageView = true
   // console.log('hello')
@@ -130,13 +130,16 @@ render() {
             errorStatus = {this.state.error}/>
         }
 
-     <Route path='/'>
+      <Route path='/'>
         <Movies movieData ={this.state.movies} getDetails ={this.getIndividualMovie}/>
-     </Route>
-     {/* <Route path='/' component={Movies}/>   */}
-      {/* getDetails ={this.getIndividualMovie} */}
+      </Route>
+    
+      <Route path=''>
+        <MovieInfo movieDetails ={this.state.individualMovie} />
+      </Route>
 
-        {/* {this.state.movies &&  
+        {/* CONDITIONAL RENDERING - MOVIES RENDERING
+        {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
           getDetails ={this.getIndividualMovie}
@@ -145,14 +148,12 @@ render() {
           />
         } */}
 
+        {/* CONDITIONAL RENDERING - INDIVIDUAL MOVIE'S DETAILS
         {this.state.individualMovie &&
         <MovieInfo 
-          movieDetails = {this.state.individualMovie}  
-          // popup = {this.isClicked}
-          // popup = {buttonPopup} 
-          // setTriggerPopup = {setButtonPopup}
-          />
-        }
+          movieDetails = {this.state.individualMovie}  />
+        } */}
+
     </div>
   );
 }
