@@ -5,7 +5,7 @@ import './App.css';
 import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
 import ErrorHandle from '../ErrorHandle/ErrorHandle';
-import { Route, NavLink } from 'react-router-dom'
+import { Route, NavLink} from 'react-router-dom'
 
 
 class App extends Component {
@@ -67,33 +67,82 @@ hideDetails = () => {
   // console.log('hello')
 }
 
+// render() {
+//   return (
+//     <div className="App">
+//         <header>
+//           <h1>Rancid Tomatillos</h1>
+//           <nav className="Navbar"  >
+//             <NavLink 
+//                 to='/' 
+//                 onClick={() => this.hideDetails()}> 
+//                 Home 
+//             </NavLink>
+//           </nav>
+//         </header>
+//         {console.log("OVER HERE====", this.state.error)}
+//         {this.state.error && 
+//           <ErrorHandle 
+//             errorStatus = {this.state.error}/>
+//         }
+//         <Route exact path='/' render={() => <Movies movieData= {this.state.movies} getDetails = {this.getIndividualMovie}/>} /> */}
+//        {this.state.movies &&   
+//         <Movies 
+//           movieData = {this.state.movies} 
+//           getDetails ={this.getIndividualMovie}
+//           homepageView = {this.homepageView}
+//           // setTriggerPopup = {setButtonPopup} 
+//           /> }
+        
+//         {/* <Route path='/movieInfo' render={() => <MovieInfo movieDetail = {this.state.individualMovie}/>} /> */}
+//       {this.state.individualMovie &&
+//         <MovieInfo 
+//           movieDetails = {this.state.individualMovie}  
+//           // popup = {this.isClicked}
+//           // popup = {buttonPopup} 
+//           // setTriggerPopup = {setButtonPopup}
+//       /> }
+//     </div>
+//   );
+// }
+
+
+
 render() {
   return (
     <div className="App">
-        <header>
-          <h1>Rancid Tomatillos</h1>
+        {/* <Navbar hideDetails = {this.hideDetails}/>
+        {console.log("OVER HERE====", this.state.error)} */}
+          <header>
+             <h1>Rancid Tomatillos</h1>
           <nav className="Navbar"  >
             <NavLink 
                 to='/' 
-                onClick={() => this.hideDetails()}> 
+                 onClick={() => this.hideDetails()}> 
                 Home 
             </NavLink>
           </nav>
         </header>
-        {console.log("OVER HERE====", this.state.error)}
+
         {this.state.error && 
           <ErrorHandle 
             errorStatus = {this.state.error}/>
         }
-        
-        {this.state.movies &&  
+
+     <Route path='/'>
+        <Movies movieData ={this.state.movies}/>
+     </Route>
+     {/* <Route path='/' component={Movies}/>   */}
+      {/* getDetails ={this.getIndividualMovie} */}
+
+        {/* {this.state.movies &&  
         <Movies 
           movieData = {this.state.movies} 
           getDetails ={this.getIndividualMovie}
           homepageView = {this.homepageView}
           // setTriggerPopup = {setButtonPopup} 
           />
-        }
+        } */}
 
         {this.state.individualMovie &&
         <MovieInfo 
@@ -106,13 +155,9 @@ render() {
     </div>
   );
 }
+
 }
 
-
-
-
-{/* 
-        <Navbar hideDetails = {this.hideDetails}/> */}
 
 
 export default App;

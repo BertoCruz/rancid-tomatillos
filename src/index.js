@@ -5,7 +5,7 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-const router =  <React.StrictMode> <BrowserRouter>  <App />  </BrowserRouter> </React.StrictMode> 
+const router = <BrowserRouter>  <App />  </BrowserRouter> 
 
 // ReactDOM.render({router}, document.getElementById('root'));
 
