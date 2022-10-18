@@ -55,3 +55,27 @@
 - Hunter: Getting the data into our pop up!
 
 - Dani: Understanding the flow of prop process - data down and action up. Also, getting our individual movie data to render on the pop up component. Another was getting to witness our fetch calls working properly!
+
+
+
+
+## Monday 10/16/22
+- Today we created:
+    - Cypress testing for Dashboard, Navbar and MovieInfo
+    
+- To Do:
+    - CSS
+    - Accessibility - Add alt attributes to every picture
+    - write up tests for routing, including:
+         - Home page redirect
+         - clicking on a movie: `card` --> `MovieInfo` 
+
+
+### Challenges:
+- Hunter: Cypress testing in general.
+- Dani: Challenge was understanding how the chai/mocha bundles work with Cypress. The syntax is just different from regular chai usage, for example. Preparing myself for intercepts and then testing for react-routers.
+
+### Wins
+- Hunter: figuring out the syntax for finding elements, specifically accessing classes.
+
+- Dani: Understanding how to access child components and finding elements. Good stuff, Hunter, that was awesome!

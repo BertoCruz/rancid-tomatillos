@@ -46,6 +46,7 @@ getIndividualMovie = (id) => {
     }
   })
   .then(data => {
+    console.log(data.movie)
     this.setState({individualMovie: data.movie});
   })
   .catch(err => {
