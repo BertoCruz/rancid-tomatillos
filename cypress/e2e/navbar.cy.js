@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('navbar component', () => {
   
   beforeEach(() => {
     cy.visit('http://localhost:3000');
