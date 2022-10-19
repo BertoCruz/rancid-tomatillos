@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React, {Component} from "react";
 import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
 
@@ -14,21 +13,20 @@ class MovieInfo extends Component {
     }
 
     componentDidMount = () => {
-        // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
-        .then(response => {
-          if(!response.ok) {
-            throw `${response.status} ${response.statusText}`;
-          } else {
-            return response.json();
-          }
-        })
-        .then(data => {
-          this.setState({movie: data.movie});
-        })
-        .catch(err => {
-          this.setState({error : err});
-        });
+            .then(response => {
+            if(!response.ok) {
+                throw `${response.status} ${response.statusText}`;
+            } else {
+                return response.json();
+            }
+            })
+            .then(data => {
+            this.setState({movie: data.movie});
+            })
+            .catch(err => {
+            this.setState({error : err});
+            });
     }
 
     render = () => {

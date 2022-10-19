@@ -5,7 +5,7 @@ import './Card.css'
 
 const Card = ( props ) => {
     return (
-        <NavLink to={`/movie-info/${props.id}`}>
+        <NavLink to={`/${props.id}`}>
             <div className ="movie-card">
                 <div className="poster-container">
                     <img src = {props.poster}></img>

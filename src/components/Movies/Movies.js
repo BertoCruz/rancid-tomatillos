@@ -24,6 +24,4 @@ const Movies = ({movieData}) => {
     )
 }
 
-
-
 export default Movies
