@@ -1,34 +1,27 @@
 import React from "react";
-import App from "../App/App.js";
 import Card from '../Cards/Card.js'
 import './Movies.css'
 
-const Movies = ({movieData, getDetails, homepageView }) => {
+const Movies = ({movieData}) => {
     const movieCards = movieData.map(movie => {
         return (
-             <Card 
-            //  onClick = {getDetails(movie.id)}
-                getDetails = {getDetails}
+            <Card 
                 title= {movie.title}
                 poster= {movie.poster_path}
                 key= {movie.id}
                 id= {movie.id}
                 averageRating= {movie.average_rating.toFixed(0)}
-             />
+            />
         )
     }) 
     
-    // return (homepageView) ? ( 
     return ( 
         <main>
             <section className='movie-container' >
                 {movieCards}
             </section>
         </main>
-        )
-        // ) : " "
+    )
 }
-
-
 
 export default Movies
