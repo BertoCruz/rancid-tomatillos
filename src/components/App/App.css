@@ -37,6 +37,11 @@ header {
   color: white;
 }
 
+.Navbar{
+  /* background-color: rgb(84, 83, 83); */
+  background-color: var(--clr-mainBackground);
+}
+
 .App-link {
   color: #61dafb;
 }

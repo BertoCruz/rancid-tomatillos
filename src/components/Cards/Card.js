@@ -1,14 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import App from "../App/App";
 import './Card.css'
 
 
 const Card = ( props ) => {
-    // console.log("props.details" ,props.getDetails)
     return (
-        <NavLink to={`/MovieInfo/${props.id}`}>
-            <div className ="movie-card" onClick={() => props.getDetails(props.id)}>
+        <NavLink to={`/movie-info/${props.id}`}>
+            <div className ="movie-card">
                 <div className="poster-container">
                     <img src = {props.poster}></img>
                 </div>
@@ -18,11 +16,5 @@ const Card = ( props ) => {
         </NavLink>
     )   
 }
-
-// // ›
-// function getMovieDetails (id) {
-// //    console.log(id)
-  
-// // }
 
 export default Card
