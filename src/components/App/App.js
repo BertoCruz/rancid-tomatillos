@@ -44,20 +44,20 @@ render() {
         </nav>
       </header>
 
-      {this.state.error && 
-        <ErrorHandle 
-          errorStatus = {this.state.error}/>
+      {this.state.error ? 
+        <ErrorHandle errorStatus = {this.state.error}/>
+        : 
+        <Switch>
+          <Route exact path='/'>
+            <Movies movieData ={this.state.movies}/>
+          </Route>
+        
+          <Route path='/:id' render={({match}) => {
+            return <MovieInfo id ={match.params.id} />
+          }} />
+        </Switch>
       }
 
-      <Switch>
-        <Route exact path='/'>
-          <Movies movieData ={this.state.movies}/>
-        </Route>
-      
-        <Route path='/:id' render={({match}) => {
-          return <MovieInfo id ={match.params.id} />
-        }} />
-      </Switch>
 
       {/* CONDITIONAL RENDERING - MOVIES RENDERING
       {this.state.movies &&  

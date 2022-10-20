@@ -31,14 +31,15 @@ class MovieInfo extends Component {
 
     render = () => {
         if(!this.state.movie){
-            return <p>Movie details couldn't be found. Sowwy.</p>
+            return <main>
+                <p>Movie details couldn't be found. Sowwy.</p>
+            </main>
+        }
+        if(this.state.error){
+            return <ErrorHandle errorStatus = {this.state.error}/>
         }
         return (
             <main>
-                {this.state.error && 
-                    <ErrorHandle 
-                    errorStatus = {this.state.error}/>
-                }
                 <div className="movie-detail-container">
                     <section className="movie-detail-section">
                         <div className="backdrop-img-container">
