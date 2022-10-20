@@ -31,7 +31,12 @@ class MovieInfo extends Component {
 
     render = () => {
         if(!this.state.movie){
-            return <p>Movie details couldn't be found. Sowwy.</p>
+            return <main>
+                <p>Movie details couldn't be found. Sowwy.</p>
+            </main>
+        }
+        if(this.state.error){
+            return <ErrorHandle errorStatus = {this.state.error}/>
         }
 
         let backdropStyling = {
@@ -58,6 +63,7 @@ class MovieInfo extends Component {
                         {/* <div className="backdrop-img-container"> */}
                             {/* <img src= {this.state.movie.backdrop_path}></img>  */}
                         {/* </div> */}
+
                         <div className="movie-info-container">
                             <div className="movie-poster-container">
                                 <img src={this.state.movie.poster_path}></img>
