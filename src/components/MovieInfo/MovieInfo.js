@@ -33,17 +33,31 @@ class MovieInfo extends Component {
         if(!this.state.movie){
             return <p>Movie details couldn't be found. Sowwy.</p>
         }
+
+        let backdropStyling = {
+            backgroundImage: `url(${this.state.movie.backdrop_path})`,
+            // height:' auto', 
+            // width:'100vw',
+            
+            backgroundSize:'cover',
+            backgroundPosition:'center center',
+            backgroundRepeat: 'no-repeat'
+
+        }
+        const avgRating = parseInt(this.state.movie.average_rating)
+    
         return (
             <main>
                 {this.state.error && 
                     <ErrorHandle 
                     errorStatus = {this.state.error}/>
                 }
-                <div className="movie-detail-container">
-                    <section className="movie-detail-section">
-                        <div className="backdrop-img-container">
-                            <img src= {this.state.movie.backdrop_path}></img>
-                        </div>
+                <div className="movie-detail-container" style={backdropStyling} >
+                    <section className="movie-detail-section" >
+                        {/* <div className="backdrop-img-container" > */}
+                        {/* <div className="backdrop-img-container"> */}
+                            {/* <img src= {this.state.movie.backdrop_path}></img>  */}
+                        {/* </div> */}
                         <div className="movie-info-container">
                             <div className="movie-poster-container">
                                 <img src={this.state.movie.poster_path}></img>
@@ -52,7 +66,7 @@ class MovieInfo extends Component {
                                 <h2 className="movie-title"> {this.state.movie.title}</h2>
                                 <p className="release-date">{this.state.movie.release_date}</p>
                                 <p className="overview">{this.state.movie.overview}</p>
-                                <p className="avg-rating">{this.state.movie.average_rating}</p>
+                                <p className="avg-rating">{avgRating.toFixed(0)}</p>
                                 <p className="genre">{this.state.movie.genres}</p>
                                 <p className="budget">{this.state.movie.budget}</p>
                                 <p className="revenue">{this.state.movie.revenue}</p>
@@ -63,7 +77,7 @@ class MovieInfo extends Component {
                     </section>
                 </div>
             </main>
-        ); 
+        )
     }
 }
 

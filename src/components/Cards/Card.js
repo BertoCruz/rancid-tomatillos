@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import './Card.css'
+import tomatillo from '../../images/tomatillo.png'
 
 
 const Card = ( props ) => {
@@ -13,7 +14,7 @@ const Card = ( props ) => {
                 <div className="movie-card-description">
                     <p className="movie-card-title"> {props.title} </p>
                     <p className="movie-card-rating"> {props.averageRating}/10
-                        <img className="tomatillo-rating" src="../../images/tomatillo.png" alt="tomatillo"></img>
+                        <img className="tomatillo-rating" src={tomatillo} alt="tomatillo"></img>
                     </p>
                 </div>
             </div>

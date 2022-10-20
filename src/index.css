@@ -19,4 +19,5 @@ body {
     -moz-osx-font-smoothing: grayscale;
     outline: 1px solid purple;
     height: 100vh;
+    background-color: #2d3a3a;
 }
