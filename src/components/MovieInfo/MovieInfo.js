@@ -66,7 +66,7 @@ class MovieInfo extends Component {
                                 <h2 className="movie-title"> {this.state.movie.title}</h2>
                                 <p className="release-date">{this.state.movie.release_date}</p>
                                 <p className="overview">{this.state.movie.overview}</p>
-                                <p className="avg-rating">{avgRating.toFixed(0)}</p>
+                                <p className="avg-rating">{avgRating.toFixed(0)} </p>
                                 <p className="genre">{this.state.movie.genres}</p>
                                 <p className="budget">{this.state.movie.budget}</p>
                                 <p className="revenue">{this.state.movie.revenue}</p>

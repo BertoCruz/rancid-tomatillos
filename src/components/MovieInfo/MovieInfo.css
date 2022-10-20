@@ -66,6 +66,9 @@
     background-color: #4b4b4b;
     opacity: 85%;
 }
+.movie-description-container:hover{
+    opacity: 100%;
+}
 
 .release-date {
     font-size: .9rem;
