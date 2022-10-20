@@ -3,6 +3,12 @@
     --clr-mainBackground: #2d3a3a;
     --clr-accent: #2ba84a;
     --clr-offWhite: #FAF9F6;
+    --clr-tomatillo: #BFDF8E;
+    --clr-tomatilloSalsa: #BBB085;
+    --clr-cilantro: #43544B;
+    --clr-cilantroCompliment1: #54434B;
+    --clr-cilantroCompliment2: #8E322D;
+    --clr-cilantroLime: #2F8735;
   }
 
 .movie-detail-container {

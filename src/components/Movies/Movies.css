@@ -1,9 +1,22 @@
+:root {
+    --clr-fontClr: #248232;
+    --clr-mainBackground: #2d3a3a;
+    --clr-accent: #2ba84a;
+    --clr-offWhite: #FAF9F6;
+    --clr-tomatillo: #BFDF8E;
+    --clr-tomatilloSalsa: #BBB085;
+    --clr-cilantro: #43544B;
+    --clr-cilantroCompliment1: #54434B;
+    --clr-cilantroCompliment2: #8E322D;
+    --clr-cilantroLime: #2F8735;
+}
+
 .movie-container{ 
-        padding: 20px;
-        display: flex;  
-        flex-wrap: wrap;
-        border: 1px solid red;
-        height: 50%;
-        overflow: scroll;
-        justify-content: center;
+    padding: 20px;
+    display: flex;  
+    flex-wrap: wrap;
+    border: 1px solid red;
+    height: 50%;
+    overflow: scroll;
+    justify-content: center;
 }
