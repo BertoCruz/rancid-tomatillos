@@ -1,5 +1,5 @@
 :root {
-    --clr-fontClr: #248232;
+    /* --clr-fontClr: #248232; */
     --clr-mainBackground: #2d3a3a;
     --clr-accent: #2ba84a;
     --clr-offWhite: #faf9f6;
@@ -16,15 +16,17 @@
     max-width: 17rem;
     max-height: 35rem;
     box-sizing: border-box;
-    border: 3px solid black;
+    /* border: 3px solid black; */
+    border-radius: 10px;
     padding: 10px;
 }
 
 .poster-container {
     position: relative;
-    height: 25rem;
+    height: 22.5rem;
     width: 15rem;
     overflow: hidden;
+    border-radius: 10px;
     border: 5px;
 }
 
@@ -36,6 +38,13 @@ img {
     height: 50px;  */
 }
 
+.movie-card-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 p {
-    font-size: 1.6rem;
+    text-decoration: none;
+    font-size: 1.0rem;
 }

@@ -10,8 +10,12 @@ const Card = ( props ) => {
                 <div className="poster-container">
                     <img src = {props.poster}></img>
                 </div>
-                <p> {props.title} </p>
-                <p> {props.averageRating}/10</p>
+                <div className="movie-card-description">
+                    <p className="movie-card-title"> {props.title} </p>
+                    <p className="movie-card-rating"> {props.averageRating}/10
+                        <img className="tomatillo-rating" src="../../images/tomatillo.png" alt="tomatillo"></img>
+                    </p>
+                </div>
             </div>
         </NavLink>
     )   

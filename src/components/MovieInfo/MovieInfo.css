@@ -1,5 +1,5 @@
 :root {
-    --clr-fontClr: #248232;
+    /* --clr-fontClr: #248232; */
     --clr-mainBackground: #2d3a3a;
     --clr-accent: #2ba84a;
     --clr-offWhite: #FAF9F6;
@@ -14,19 +14,20 @@
 .movie-detail-container {
     position: absolute;
     display: flex;
-    max-height: 100vh;
+    max-height: 110vh;
     width: 100%;
     justify-content: center;
+    background-color: var(--clr-mainBackground);
 }
 
 .movie-detail-section {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 }
 
 .backdrop-img-container {
-    height: 50%;
+    height: 60%;
     width: 100%;
     overflow: hidden;
 }

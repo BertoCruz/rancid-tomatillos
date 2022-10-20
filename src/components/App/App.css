@@ -2,11 +2,13 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    color: var(--clr-fontClr);
+    /* color: var(--clr-fontClr); */
+    color: #bfdf8e;
 }
 
 :root {
-    --clr-fontClr: #248232;
+    /* --clr-fontClr: #248232; */
+    /* --clr-fontClr: #bfdf8e; */
     --clr-mainBackground: #2d3a3a;
     --clr-accent: #2ba84a;
     --clr-offWhite: #faf9f6;
@@ -34,7 +36,8 @@
 }
 
 header {
-    background-color: var(--clr-mainBackground);
+    /* background-color: var(--clr-mainBackground); */
+    background: linear-gradient(318.68deg, #54434b 0%, #43544b 49.72%, #2d3a3a 100%);
     min-height: 25vh;
     display: flex;
     flex-direction: column;
@@ -42,7 +45,7 @@ header {
     justify-content: center;
     font-family: "Rubik", sans-serif;
     font-size: calc(10px + 2vmin);
-    color: white;
+    /* color: white; */
 }
 
 .Navbar {
