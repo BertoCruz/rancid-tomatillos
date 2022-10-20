@@ -1,8 +1,14 @@
 :root {
-  --clr-fontClr: #248232;
-  --clr-mainBackground: #2d3a3a;
-  --clr-accent: #2ba84a;
-  --clr-offWhite: #FAF9F6;
+    /* --clr-fontClr: #248232; */
+    --clr-mainBackground: #2d3a3a;
+    --clr-accent: #2ba84a;
+    --clr-offWhite: #faf9f6;
+    --clr-tomatillo: #bfdf8e;
+    --clr-tomatilloSalsa: #bbb085;
+    --clr-cilantro: #43544b;
+    --clr-cilantroCompliment1: #54434b;
+    --clr-cilantroCompliment2: #8e322d;
+    --clr-cilantroLime: #2f8735;
 }
 
 .movie-card {
@@ -10,26 +16,45 @@
     max-width: 17rem;
     max-height: 35rem;
     box-sizing: border-box;
-    border: 3px solid black;
+    /* border: 3px solid black; */
+    border-radius: 10px;
     padding: 10px;
-  }
-
-.poster-container {
-  position: relative;
-  height: 25rem;
-  width: 15rem;
-  overflow: hidden;
-  border: 5px;
 }
 
-img{
-  height: auto;
-  inline-size: 100%;
-  object-fit: cover;
-  /* width: 50px ;
-  height: 50px;  */
+.poster-container {
+   
+    position: relative;
+    height: 22.5rem;
+    width: 15rem;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 5px;
+}
+.poster-container:hover{
+    transform: scale(1.04);
+    transform: rotate(2deg);
+    transition: all 0.2s ease-in-out;
+}
+
+img {
+    height: auto;
+    inline-size: 100%;
+    object-fit: cover;
+    /* width: 50px ;
+    height: 50px;  */
+}
+
+.movie-card-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 p {
-  font-size: 1.6rem;
+    text-decoration: none;
+    font-size: 1.0rem;
+}
+.tomatillo-rating{
+    height: 20px; 
+    width: 20px; 
 }
