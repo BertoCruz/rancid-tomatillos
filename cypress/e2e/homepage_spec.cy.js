@@ -7,7 +7,6 @@ describe('card component', () => {
     cy.get('h1').contains('Rancid Tomatillos')
   } )
 
-
   it('As a user, I should have a home link that take me to homepage', () => {
     cy.contains('Home').click().location().should((loc) => 
     expect(loc.pathname).to.eq('/') )
