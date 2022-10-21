@@ -13,7 +13,7 @@ describe('Movie Info Component', () => {
     )
    })
           
-  it('should have a home link that take you home', () => {
+  it('should have a home link that take you to homepage', () => {
     cy.contains('Home').click().location().should((loc) => 
     expect(loc.pathname).to.eq('/') )
   })
@@ -23,7 +23,6 @@ describe('Movie Info Component', () => {
   })
 
   it(`Should display a movie's detail`, () => {
-    // cy.get('.movie-container').find('.movie-card:nth-child(1)').click()
     cy.get('.movie-detail-container').find('.movie-title').contains('Money Plane')
     cy.get('.movie-detail-container').find('.release-date').contains("2020-09-29")
     cy.get('.movie-detail-container').find('.overview').contains("A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")

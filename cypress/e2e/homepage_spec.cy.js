@@ -2,6 +2,11 @@ describe('card component', () => {
   beforeEach(()=> {
     cy.visit('http://localhost:3000')
   })
+  
+  it('should have a home link that take you to homepage', () => {
+    cy.contains('Home').click().location().should((loc) => 
+    expect(loc.pathname).to.eq('/') )
+  })
 
   it('it should display movie cards on a the main page', () => {
     cy.get('.movie-container')
