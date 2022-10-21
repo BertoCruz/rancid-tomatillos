@@ -19,4 +19,5 @@
     /* border: 1px solid red; */
     height: 50%;
     justify-content: center;
+    cursor: default;
 }

@@ -48,6 +48,13 @@ header {
     font-size: calc(10px + 2vmin);
     /* color: white; */
 }
+.active{
+    background-color: var(--clr-cilantro);
+}
+.active:hover{
+    color: var(--clr-cilantroLime)
+}
+
 
 .Navbar {
     /* background-color: rgb(84, 83, 83); */
