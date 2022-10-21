@@ -18,6 +18,7 @@
     --clr-cilantroCompliment1: #54434b;
     --clr-cilantroCompliment2: #8e322d;
     --clr-cilantroLime: #2f8735;
+
 }
 
 .App {
@@ -47,6 +48,13 @@ header {
     font-size: calc(10px + 2vmin);
     /* color: white; */
 }
+.active{
+    background-color: var(--clr-cilantro);
+}
+.active:hover{
+    color: var(--clr-cilantroLime)
+}
+
 
 .Navbar {
     /* background-color: rgb(84, 83, 83); */

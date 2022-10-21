@@ -6,7 +6,7 @@ class MovieInfo extends Component {
     constructor(props) {
         super();
         this.state = {
-            movie : [],
+            movie : null,
             id : props.id,
             error : null
         }
@@ -29,48 +29,62 @@ class MovieInfo extends Component {
             });
     }
 
+    checkForGenre = () => {
+        if(this.state.movie.genres.length){
+            return this.state.movie.genres.join(', ')
+        } else {
+            return "No genre available"
+        }
+    }
+
+    formatDollarFigure = (property) => {
+        const amount = parseInt(property)
+        const numFor = Intl.NumberFormat('en-US')
+        const formattedAmount = numFor.format(amount)
+        
+        if(property === 0){
+            return 'No public record'
+        } else {
+            return `$${formattedAmount}`
+        } 
+    }
+
     render = () => {
         if(!this.state.movie){
-            return <p>Movie details couldn't be found. Sowwy.</p>
+            return <main>
+                <p>{this.state.error}</p>
+            </main>
+        }
+        if(this.state.error){
+            return <ErrorHandle errorStatus = {this.state.error}/>
         }
 
         let backdropStyling = {
             backgroundImage: `url(${this.state.movie.backdrop_path})`,
-            // height:' auto', 
-            // width:'100vw',
-            
             backgroundSize:'cover',
             backgroundPosition:'center center',
             backgroundRepeat: 'no-repeat'
-
         }
-        const avgRating = parseInt(this.state.movie.average_rating)
-    
+       
         return (
             <main>
-                {this.state.error && 
-                    <ErrorHandle 
-                    errorStatus = {this.state.error}/>
-                }
                 <div className="movie-detail-container" style={backdropStyling} >
                     <section className="movie-detail-section" >
-                        {/* <div className="backdrop-img-container" > */}
-                        {/* <div className="backdrop-img-container"> */}
-                            {/* <img src= {this.state.movie.backdrop_path}></img>  */}
-                        {/* </div> */}
                         <div className="movie-info-container">
-                            <div className="movie-poster-container">
-                                <img src={this.state.movie.poster_path}></img>
+                           <div className="movie-poster-container">
+                                <div className="movie-poster">
+                                    <img src={this.state.movie.poster_path}></img>
+                                </div>
                             </div>
                             <div className="movie-description-container">
                                 <h2 className="movie-title"> {this.state.movie.title}</h2>
-                                <p className="release-date">{this.state.movie.release_date}</p>
+                                <p className="release-date"> Release Date: {this.state.movie.release_date}</p>
                                 <p className="overview">{this.state.movie.overview}</p>
-                                <p className="avg-rating">{avgRating.toFixed(0)} </p>
-                                <p className="genre">{this.state.movie.genres}</p>
-                                <p className="budget">{this.state.movie.budget}</p>
-                                <p className="revenue">{this.state.movie.revenue}</p>
-                                <p className="runtime">{this.state.movie.runtime}</p>
+                                <p className="avg-rating"> Rancid Rating: {parseInt(this.state.movie.average_rating).toFixed(0)} </p>
+                                <p className="genre"> Genre: {this.checkForGenre()}</p>
+                                <p className="budget"> Budget: {this.formatDollarFigure(this.state.movie.budget)}</p>
+                                <p className="revenue"> Revenue: {this.formatDollarFigure(this.state.movie.revenue)}</p>
+                                <p className="runtime"> Runtime: {this.state.movie.runtime} Minutes </p>
                                 <p className="tagline">{this.state.movie.tagline}</p>
                             </div>
                         </div>
