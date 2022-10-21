@@ -9,9 +9,8 @@ describe('card component', () => {
   })
 
   it('it should display movie cards ', () => {
-    cy.get('.movie-container').find('.movie-card:nth-child(1)')
-    cy.get('.movie-container').find('.movie-card:nth-child(2)')
-    cy.get('.movie-container').find('.movie-card:nth-child(3)')
+    cy.get('.movie-container').find('.movie-card')
+   
   })
 
   it('card should display an image', () => {
