@@ -5,7 +5,7 @@ describe('Movie Info Component', () => {
     cy.get('.movie-container').find('a:nth-child(1)').click()
   })
 
-   it('should take you to a movie detail page when clicking a card on the homepage', () => {
+  it('As a user, when I click on a movie card it should take you to a movie detail page', () => {
     cy.visit('http://localhost:3000/');
     cy.get('.movie-container').find('a:nth-child(1)').click()
     cy.location().should((loc) => 
@@ -13,16 +13,16 @@ describe('Movie Info Component', () => {
     )
    })
           
-  it('should have a home link that take you to homepage', () => {
+  it('As a user, I should be able to click on a home link that takes you to homepage', () => {
     cy.contains('Home').click().location().should((loc) => 
     expect(loc.pathname).to.eq('/') )
   })
 
-  it('should display a movie poster', () => {
+  it('As a user, when I am load the movie details, I should see a movie poster', () => {
     cy.get('.movie-detail-container').find('.movie-poster-container').find('img')
   })
 
-  it(`Should display a movie's detail`, () => {
+  it(`As a user, when I am load the movie details, I should see more movie details`, () => {
     cy.get('.movie-detail-container').find('.movie-title').contains('Money Plane')
     cy.get('.movie-detail-container').find('.release-date').contains("2020-09-29")
     cy.get('.movie-detail-container').find('.overview').contains("A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.")
