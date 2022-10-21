@@ -9,6 +9,7 @@
     --clr-cilantroCompliment1: #54434B;
     --clr-cilantroCompliment2: #8E322D;
     --clr-cilantroLime: #2F8735;
+    --clr-movieInfoBackground: #4b4b4b; 
   }
 
 .movie-detail-container {
@@ -47,15 +48,32 @@
 }
 
 /* movie poster container */
-.movie-poster-container {
-    height: 100%;
-    max-width: 15rem;
+.movie-poster-container{
+    height: 24rem;
+    background: rgba(75, 75, 75 , .8);
+    display: flex;
+    flex-direction: row;
+    width: 17rem;
+    align-items: center;
+    justify-content: center;
+    /* opacity: .8; */
+    border-radius: 10px;
+    
 }
 
-.movie-poster-container img{
+.movie-poster {
+    height: 100%;
+    max-width: 15rem;
+    opacity: 1;
+}
+
+.movie-poster img{
     height: auto;
     inline-size: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    opacity: 1;
 }
 
 /* movie description */
@@ -63,12 +81,11 @@
 .movie-description-container {
     width: 70%;
     height: 100%;
-    background-color: #4b4b4b;
-    opacity: 85%;
+    background-color: rgba(75, 75, 75 , .8);
+ 
+    border-radius: 10px;
 }
-.movie-description-container:hover{
-    opacity: 100%;
-}
+
 
 .release-date {
     font-size: .9rem;

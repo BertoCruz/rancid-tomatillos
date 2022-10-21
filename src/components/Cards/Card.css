@@ -33,9 +33,9 @@
 }
 .poster-container:hover{
     transform: scale(1.05);
-    /* transform: rotate(2deg); */
+    /* transform: rotate(2deg);  */
     transition: all 0.3s ease-in-out;
-    box-shadow: 5px 5px 5px var(--clr-offWhite);
+    box-shadow: .3rem .3rem .3rem var(--clr-offWhite);
 }
 
 img {

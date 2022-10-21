@@ -59,7 +59,7 @@
 
 
 
-## Monday 10/16/22
+## Monday 10/17/22
 - Today we created:
     - Cypress testing for Dashboard, Navbar and MovieInfo
     
@@ -79,3 +79,61 @@
 - Hunter: figuring out the syntax for finding elements, specifically accessing classes.
 
 - Dani: Understanding how to access child components and finding elements. Good stuff, Hunter, that was awesome!
+
+
+
+## Tuesday 10/18/22
+- Today we created:
+    - We started react routing for our application. 
+    
+- To Do:
+    - Finish Routing for MovieInfo
+
+
+### Challenges:
+- Hunter:Challenge was that Routing was a difficult concept to understand. 
+- Dani: Challenge was understanding NavLinks. 
+
+### Wins
+- Hunter: Getting a game plan for how to attack react router, and feeling that I understood and felt confident about it. 
+
+- Dani: Getting a game plan for how to attack react router, and feeling that I understood and felt confident about it. 
+
+
+
+## Wednesday 10/19/22
+- Today we created:
+    - We finished react routing for our application. 
+    
+- To Do:
+    - CSS styling and Cypress testing
+
+
+### Challenges:
+- Hunter:Challenge was getting all the parts we need to make react router work properly.  
+- Dani: Challenge was understanding the match object and switches 
+
+### Wins
+- Hunter: figuring out react routing was a huge win for me. 
+
+- Dani: Figuring out that we needed to change our movie details from a functional component to a class component. Getting the routes working with react router. 
+
+
+
+## Thursday 10/20/22
+- Today we created:
+    - We fixed how some of our data was being displayed.
+    - We styled our application to look more like our comp.  
+    
+- To Do:
+    - Finish Cypress Testing 
+
+
+### Challenges:
+- Hunter:Challenge was understanding how a click can be tested using cypress. 
+- Dani: Challenge was cypress: understanding how to navigate a webpage with routing.
+
+### Wins
+- Hunter: Finally getting some styling done to our application. 
+
+- Dani: Getting our application style cleaner and closer to our comps. 

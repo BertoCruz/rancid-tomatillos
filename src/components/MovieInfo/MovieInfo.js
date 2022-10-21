@@ -71,8 +71,10 @@ class MovieInfo extends Component {
                 <div className="movie-detail-container" style={backdropStyling} >
                     <section className="movie-detail-section" >
                         <div className="movie-info-container">
-                            <div className="movie-poster-container">
-                                <img src={this.state.movie.poster_path}></img>
+                           <div className="movie-poster-container">
+                                <div className="movie-poster">
+                                    <img src={this.state.movie.poster_path}></img>
+                                </div>
                             </div>
                             <div className="movie-description-container">
                                 <h2 className="movie-title"> {this.state.movie.title}</h2>
