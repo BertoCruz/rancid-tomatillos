@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
+import { fetchIndividualMovie } from '../../api-calls'
 
 class MovieInfo extends Component {
     constructor(props) {
@@ -13,14 +14,7 @@ class MovieInfo extends Component {
     }
 
     componentDidMount = () => {
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
-            .then(response => {
-            if(!response.ok) {
-                throw `${response.status} ${response.statusText}`;
-            } else {
-                return response.json();
-            }
-            })
+        fetchIndividualMovie(this.state.id)
             .then(data => {
             this.setState({movie: data.movie});
             })

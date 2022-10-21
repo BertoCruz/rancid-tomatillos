@@ -4,7 +4,7 @@ import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
 import ErrorHandle from '../ErrorHandle/ErrorHandle';
 import { Route, NavLink, Switch} from 'react-router-dom'
-
+import { fetchMoviesData } from '../../api-calls'
 
 class App extends Component {
   constructor(){
@@ -18,19 +18,27 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if(!response.ok) {
-          throw `${response.status} ${response.statusText}`;
-        } else {
-          return response.json();
-        }
-      })
+    fetchMoviesData()
       .then(data => this.setState({movies:data.movies}))
       .catch(err => {
         this.setState({error : err});
       })
   }
+  
+  // componentDidMount(){
+  //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+  //     .then(response => {
+  //       if(!response.ok) {
+  //         throw `${response.status} ${response.statusText}`;
+  //       } else {
+  //         return response.json();
+  //       }
+  //     })
+  //     .then(data => this.setState({movies:data.movies}))
+  //     .catch(err => {
+  //       this.setState({error : err});
+  //     })
+  // }
 
   render() {
     return (
