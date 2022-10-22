@@ -1,7 +1,14 @@
 import React, {Component} from "react";
 import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
-import { fetchIndividualMovie } from '../../api-calls'
+import { fetchIndividualMovie, fetchMovieTrailer} from '../../api-calls'
+import ReactPlayer from 'react-player'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Mousewheel, Keyboard,Scrollbar} from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+// import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 
 //change this back to functional component and pass in movies as prop
@@ -10,6 +17,7 @@ class MovieInfo extends Component {
         super();
         this.state = {
             movie : null,
+            videos: null,
             id : props.id,
             error : null
         }
@@ -23,7 +31,37 @@ class MovieInfo extends Component {
             .catch(err => {
             this.setState({error : err});
             });
+        
+        fetchMovieTrailer(this.state.id)
+            .then(data => {
+            this.setState({videos: data.videos});
+            })
+            .catch(err => {
+            this.setState({error : err});
+            });
     }
+
+    mapVideos(){
+        const videosTrailers = 
+        this.state.videos.map((movie) => {
+          if(movie.site === 'Vimeo'){
+           let url = `https://player.vimeo.com/video/${movie.key}`
+            return ( 
+               <SwiperSlide className="swiper-slide" key={movie.id} width='100%' height='100%'> 
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}/>
+              </SwiperSlide> 
+           ) 
+        } else {
+           let url = `https://www.youtube-nocookie.com/embed/${movie.key}`
+            return(
+                <SwiperSlide className="swiper-slide" key={movie.id}> 
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}/>
+                </SwiperSlide>
+            )}
+        
+        })
+        return videosTrailers
+      }
 
     checkForGenre = () => {
         if(this.state.movie.genres.length){
@@ -55,13 +93,23 @@ class MovieInfo extends Component {
             return <ErrorHandle errorStatus = {this.state.error}/>
         }
 
-        let backdropStyling = {
-            backgroundImage: `url(${this.state.movie.backdrop_path})`,
-            backgroundSize:'cover',
-            backgroundPosition:'center center',
-            backgroundRepeat: 'no-repeat'
+        let backdropStyling;
+        if(this.state.movie.backdrop_path === 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg'){
+            backdropStyling = {
+                background:'#2d3a3a',
+                backgroundSize:'cover',
+                backgroundPosition:'center center',
+                backgroundRepeat: 'no-repeat'
+            }
+        } else {
+            backdropStyling = {
+                backgroundImage: `url(${this.state.movie.backdrop_path})`,
+                backgroundSize:'cover',
+                backgroundPosition:'center center',
+                backgroundRepeat: 'no-repeat'
+            } 
         }
-       
+
         return (
             <main>
                 <div className="movie-detail-container" style={backdropStyling} >
@@ -69,7 +117,7 @@ class MovieInfo extends Component {
                         <div className="movie-info-container">
                            <div className="movie-poster-container">
                                 <div className="movie-poster">
-                                    <img src={this.state.movie.poster_path}></img>
+                                    <img src={this.state.movie.poster_path} alt={this.state.movie.title}></img>
                                 </div>
                             </div>
                             <div className="movie-description-container">
@@ -84,6 +132,21 @@ class MovieInfo extends Component {
                                 <p className="tagline">{this.state.movie.tagline}</p>
                             </div>
                         </div>
+                        <div className = "video-container">
+                            {this.state.videos && 
+                              <Swiper
+                                  modules={[Navigation, Scrollbar]}
+                                  spaceBetween={50}
+                                  slidesPerView={1}
+                                  navigation
+                                  keyboard={true}
+                                  scrollbar={{ draggable: true }}
+                                  onSwiper={(swiper) => swiper}
+                                 >
+                                {this.mapVideos()}
+                            </Swiper>
+                            }       
+                         </div>
                     </section>
                 </div>
             </main>
