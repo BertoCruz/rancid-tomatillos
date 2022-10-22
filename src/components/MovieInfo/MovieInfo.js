@@ -1,13 +1,15 @@
 import React, {Component} from "react";
 import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
-import { fetchIndividualMovie } from '../../api-calls'
+import { fetchIndividualMovie, fetchMovieTrailer} from '../../api-calls'
+import ReactPlayer from 'react-player'
 
 class MovieInfo extends Component {
     constructor(props) {
         super();
         this.state = {
             movie : null,
+            videos: null,
             id : props.id,
             error : null
         }
@@ -21,7 +23,25 @@ class MovieInfo extends Component {
             .catch(err => {
             this.setState({error : err});
             });
+        
+        fetchMovieTrailer(this.state.id)
+            .then(data => {
+            this.setState({videos: data.videos[0]});
+            })
+            .catch(err => {
+            this.setState({error : err});
+            });
+
     }
+
+    checkVideoType = (id) => {
+        if(this.state.videos.site === 'Vimeo'){
+            return `https://player.vimeo.com/video/${id}`
+        } else {
+            return `https://www.youtube-nocookie.com/embed/${id}`
+        }
+    }
+
 
     checkForGenre = () => {
         if(this.state.movie.genres.length){
@@ -44,6 +64,7 @@ class MovieInfo extends Component {
     }
 
     render = () => {
+        console.log(this.state.videos)
         if(!this.state.movie){
             return <main>
                 <p>{this.state.error}</p>
@@ -52,13 +73,25 @@ class MovieInfo extends Component {
         if(this.state.error){
             return <ErrorHandle errorStatus = {this.state.error}/>
         }
-
-        let backdropStyling = {
-            backgroundImage: `url(${this.state.movie.backdrop_path})`,
-            backgroundSize:'cover',
-            backgroundPosition:'center center',
-            backgroundRepeat: 'no-repeat'
+        let backdropStyling;
+        if(this.state.movie.backdrop_path === 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg'){
+            backdropStyling = {
+                background:'#2d3a3a',
+                backgroundSize:'cover',
+                backgroundPosition:'center center',
+                backgroundRepeat: 'no-repeat'
+            }
+        } else {
+            backdropStyling = {
+                backgroundImage: `url(${this.state.movie.backdrop_path})`,
+                backgroundSize:'cover',
+                backgroundPosition:'center center',
+                backgroundRepeat: 'no-repeat'
+            }
+            
         }
+
+        console.log(this.state.movie.backdrop_path)
        
         return (
             <main>
@@ -82,6 +115,11 @@ class MovieInfo extends Component {
                                 <p className="tagline">{this.state.movie.tagline}</p>
                             </div>
                         </div>
+                        <div className = "video-container">
+                            {this.state.videos && 
+                                <ReactPlayer width='100%' height='100%' className="trailer" url={this.checkVideoType(this.state.videos.key)} />
+                            }       
+                         </div>
                     </section>
                 </div>
             </main>
