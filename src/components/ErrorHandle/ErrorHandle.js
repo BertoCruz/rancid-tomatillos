@@ -7,8 +7,8 @@ const ErrorHandle = (props) => {
     return (
         <main className="error-handling">
             {/* <h2>{props.errorStatus.status} : {props.errorStatus.statusText}</h2> */}
-            <h2>{props.errorStatus}</h2>
-            <p>Please refresh the page</p>
+            <h2 className='neonText'>{props.errorStatus}</h2>
+            <p className='neonText'>Please refresh the page</p>
         </main>
     )
 }
