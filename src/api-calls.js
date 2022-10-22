@@ -20,4 +20,16 @@ const fetchIndividualMovie = (endpoint) => {
         })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 export { fetchMoviesData, fetchIndividualMovie };

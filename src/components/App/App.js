@@ -4,13 +4,15 @@ import Movies from '.././Movies/Movies'
 import MovieInfo from '.././MovieInfo/MovieInfo'
 import ErrorHandle from '../ErrorHandle/ErrorHandle';
 import { Route, NavLink, Switch} from 'react-router-dom'
-import { fetchMoviesData } from '../../api-calls'
+import { fetchMoviesData, fetchIndividualMovie } from '../../api-calls'
+
 
 class App extends Component {
   constructor(){
     super(); 
     this.state = {
       movies: [], 
+      genres: {},
       error: null
     }
     this.isClicked = false;
@@ -18,12 +20,47 @@ class App extends Component {
   }
 
   componentDidMount(){
+    //here we will store all of the genres keys with an array of movies according 
+    //to their genre.
+    //at the end of the component did mount, we will setState to the original genres
+    // to equal genresList/
+    let genresList = {}  
+
     fetchMoviesData()
-      .then(data => this.setState({movies:data.movies}))
+      .then(data => {
+        this.setState({movies:data.movies})
+        for(const movie of data.movies) {
+          fetchIndividualMovie(movie.id)
+            .then(details => {
+              console.log(".THEN=====", details)
+              const movieIndex = this.state.movies.findIndex(oldMovie => oldMovie.id === movie.id)
+              this.setState(prevState => {
+                const newMovies = [...prevState.movies]
+                newMovies.splice(movieIndex, 1, details.movie)
+                return { 
+                  ...prevState, 
+                  movies: newMovies
+                }
+              })
+            })
+        }        
+      })
       .catch(err => {
         this.setState({error : err});
       })
+
+    
   }
+
+ 
+
+  // componentDidMount(){
+  //   fetchMoviesData()
+  //     .then(data => this.setState({movies:data.movies}))
+  //     .catch(err => {
+  //       this.setState({error : err});
+  //     })
+  // }
   
   // componentDidMount(){
   //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
@@ -41,6 +78,7 @@ class App extends Component {
   // }
 
   render() {
+    console.log("ALL OF OUR MOVIES===", this.state.movies);
     return (
       <div className="App">
         <header>
