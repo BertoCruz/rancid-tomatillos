@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Rancid Tomatillos</h1>
+          <h1 className='title'>Rancid Tomatillos</h1>
           <nav className="Navbar"  >
             <NavLink to='/' >
                 Home 
