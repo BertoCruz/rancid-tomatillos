@@ -24,7 +24,7 @@ class App extends Component {
     //to their genre.
     //at the end of the component did mount, we will setState to the original genres
     // to equal genresList/
-    let genresList = {}  
+    const genresList = []
 
     fetchMoviesData()
       .then(data => {
@@ -32,7 +32,13 @@ class App extends Component {
         for(const movie of data.movies) {
           fetchIndividualMovie(movie.id)
             .then(details => {
-              console.log(".THEN=====", details)
+              // console.log(".THEN=====", details)
+              // genresList.push(...details.movie.genres)
+              details.movie.genres.forEach(genre => {
+                if(!genresList.includes(genre)){
+                  genresList.push(genre);
+                }
+              })
               const movieIndex = this.state.movies.findIndex(oldMovie => oldMovie.id === movie.id)
               this.setState(prevState => {
                 const newMovies = [...prevState.movies]
@@ -43,7 +49,8 @@ class App extends Component {
                 }
               })
             })
-        }        
+        }
+                
       })
       .catch(err => {
         this.setState({error : err});

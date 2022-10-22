@@ -9,6 +9,8 @@ import Card from '../Cards/Card.js'
 import './Movies.css'
 
 const Movies = ({movieData}) => {
+    //run a reduce on all this.state.genres to add all movie objects 
+    //
     const movieCards = movieData.map(movie => {
         return (
             <Card 

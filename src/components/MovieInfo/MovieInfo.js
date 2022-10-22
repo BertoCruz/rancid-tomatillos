@@ -3,6 +3,8 @@ import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
 import { fetchIndividualMovie } from '../../api-calls'
 
+
+//change this back to functional component and pass in movies as prop
 class MovieInfo extends Component {
     constructor(props) {
         super();
