@@ -47,7 +47,7 @@ class MovieInfo extends Component {
           if(movie.site === 'Vimeo'){
            let url = `https://player.vimeo.com/video/${movie.key}`
             return ( 
-               <SwiperSlide className="swiper-slide" key={movie.id} width='100%' height='100%'> 
+               <SwiperSlide className="swiper-slide" key={movie.id}> 
                 <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}/>
               </SwiperSlide> 
            ) 

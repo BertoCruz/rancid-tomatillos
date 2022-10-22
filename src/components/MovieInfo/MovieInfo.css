@@ -125,8 +125,9 @@
 }
 /* Movie-video-container*/ 
 .video-container{
-    width: 40rem; 
-    height: 50rem;
+    /* width: 40rem; 
+    height: 50rem; */
+    aspect-ratio: 16/9;
     display:flex; 
     justify-content: center;
     /* margin-left: 23rem; */
