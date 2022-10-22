@@ -9,7 +9,7 @@ const Card = ( props ) => {
         <NavLink to={`/${props.id}`}>
             <div className ="movie-card">
                 <div className="poster-container">
-                    <img src = {props.poster}></img>
+                    <img src = {props.poster} alt={props.title}></img>
                 </div>
                 <div className="movie-card-description">
                     <p className="movie-card-title"> {props.title} </p>
