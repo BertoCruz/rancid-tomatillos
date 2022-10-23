@@ -19,6 +19,28 @@
     height: 70vh;
     width: 100vw;
 }
+
+.tomatillo-animation {
+  height: 30vmin;
+  width: auto;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tomatillo-animation{
+      animation: tomatillo-animation-spin infinite 10s linear;
+  }
+}
+
+@keyframes tomatillo-animation-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 .neonText {
   animation: flicker 1.5s infinite alternate;
   color: #fff;

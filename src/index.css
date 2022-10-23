@@ -1,15 +1,15 @@
-*,
+/* *,
 *::before,
 *::after {
     box-sizing: border-box;
     /* color: var(--clr-fontClr); */
-}
 
-:root {
+
+/* :root {
     /* --clr-fontClr: #248232; */
     /* --clr-fontClr: #bfdf8e; */
-    --clr-mainBackground: #2d3a3a;
-}
+    /* --clr-mainBackground: #2d3a3a; */
+
 
 body {
     margin: 0;

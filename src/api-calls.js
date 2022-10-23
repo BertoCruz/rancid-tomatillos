@@ -30,8 +30,6 @@ const fetchMovieTrailer = (filePath) => {
         }
   })
 }
+
+
 export { fetchMoviesData, fetchIndividualMovie, fetchMovieTrailer };
-
-
-
-

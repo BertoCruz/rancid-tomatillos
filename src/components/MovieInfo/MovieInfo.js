@@ -10,26 +10,28 @@ import "swiper/css/navigation";
 // import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+
+//change this back to functional component and pass in movies as prop
 class MovieInfo extends Component {
     constructor(props) {
         super();
         this.state = {
-            movie : null,
+            // movie : props.movie,
+            movie: null,
             videos: null,
             id : props.id,
+            // error : props.error
             error : null
         }
     }
 
-    componentDidMount = () => {
+    componentDidMount = () => { 
         fetchIndividualMovie(this.state.id)
-            .then(data => {
-            this.setState({movie: data.movie});
-            })
+            .then(data => this.setState({movie:data.movie}))
             .catch(err => {
-            this.setState({error : err});
-            });
-        
+                this.setState({error : err});
+            })
+
         fetchMovieTrailer(this.state.id)
             .then(data => {
             this.setState({videos: data.videos});
