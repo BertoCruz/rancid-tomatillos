@@ -22,7 +22,7 @@ const Movies = ({movieData, genres}) => {
     //         acc[genre] = []
     //     }
     //     acc[genre].push(filteredMovies)
-    //     // movie.genres.includes(genres)
+  //     // movie.genres.includes(genres)
     //     return acc
     // }, {});
     // console.log("GENRE MOVIES======", genreMovies);
