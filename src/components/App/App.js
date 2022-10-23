@@ -12,7 +12,7 @@ class App extends Component {
     super(); 
     this.state = {
       movies: [], 
-      genres: {},
+      genres: [],
       error: null
     }
     this.isClicked = false;
@@ -37,6 +37,7 @@ class App extends Component {
               details.movie.genres.forEach(genre => {
                 if(!genresList.includes(genre)){
                   genresList.push(genre);
+
                 }
               })
               const movieIndex = this.state.movies.findIndex(oldMovie => oldMovie.id === movie.id)
@@ -55,9 +56,9 @@ class App extends Component {
       .catch(err => {
         this.setState({error : err});
       })
-
-    
-  }
+    this.setState({genres: genresList})
+    console.log("GENRESLIST ======", genresList);
+  } 
 
  
 
@@ -68,24 +69,17 @@ class App extends Component {
   //       this.setState({error : err});
   //     })
   // }
-  
-  // componentDidMount(){
-  //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  //     .then(response => {
-  //       if(!response.ok) {
-  //         throw `${response.status} ${response.statusText}`;
-  //       } else {
-  //         return response.json();
-  //       }
-  //     })
-  //     .then(data => this.setState({movies:data.movies}))
-  //     .catch(err => {
-  //       this.setState({error : err});
-  //     })
-  // }
+
+  findIndividualMovie = (id) => {
+    const individual = this.state.movies.find(movie => {
+      return movie.id === parseInt(id)
+    })
+    return individual;
+  }
 
   render() {
-    console.log("ALL OF OUR MOVIES===", this.state.movies);
+    // console.log("ALL OF OUR MOVIES FROM APP===", this.state.movies);
+    // console.log("state of genres IN APP===", this.state.genres);
     return (
       <div className="App">
         <header>
@@ -102,31 +96,17 @@ class App extends Component {
           : 
           <Switch>
             <Route exact path='/'>
-              <Movies movieData ={this.state.movies}/>
+              <Movies movieData={this.state.movies} genres={this.state.genres} />
             </Route>
           
             <Route path='/:id' render={({match}) => {
-              return <MovieInfo id ={match.params.id} />
+              return <MovieInfo 
+                id={match.params.id} 
+                movie={this.findIndividualMovie(match.params.id)} 
+                error={this.state.error}/>
             }} />
           </Switch>
         }
-
-
-        {/* CONDITIONAL RENDERING - MOVIES RENDERING
-        {this.state.movies &&  
-        <Movies 
-          movieData = {this.state.movies} 
-          getDetails ={this.getIndividualMovie}
-          homepageView = {this.homepageView}
-          // setTriggerPopup = {setButtonPopup} 
-          />
-        } */}
-
-        {/* CONDITIONAL RENDERING - INDIVIDUAL MOVIE'S DETAILS
-        {this.state.individualMovie &&
-        <MovieInfo 
-          movieDetails = {this.state.individualMovie}  />
-        } */}
       </div>
     );
   }
