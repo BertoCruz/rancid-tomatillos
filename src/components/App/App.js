@@ -54,13 +54,16 @@ class App extends Component {
               //     movies: newMovies
               //   }
               // })
+              
               // holdMovies.splice(movieIndex, 1, details.movie)
-              holdMovies.push(details.movie);
               // console.log("HOLDMOVIES ======", holdMovies);
+              holdMovies.push(details.movie);
               this.setState({movies: holdMovies})
             })
+            .catch(err => {
+              this.setState({error : err});
+            })
         }
-                
       })
       .catch(err => {
         this.setState({error : err});
@@ -109,11 +112,10 @@ class App extends Component {
             </Route>
           
             <Route path='/:id' render={({match}) => {
-              return <MovieInfo 
-                id={match.params.id} 
-                movie={this.findIndividualMovie(match.params.id)} 
-                error={this.state.error}/>
-            }} />
+              return <MovieInfo id={match.params.id} /> }} />
+                {/* // movie={this.findIndividualMovie(match.params.id)} 
+                // error={this.state.error}/>
+            }} /> */}
           </Switch>
         }
       </div>

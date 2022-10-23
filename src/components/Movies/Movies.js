@@ -11,23 +11,21 @@ import './Movies.css'
 const Movies = ({movieData, genres}) => {
     //run a reduce on all this.state.genres to add all movie objects 
     // console.log("MOVIE DATA IN MOVIES,JS", movieData);
-    const genreMovies = genres.reduce((acc, genre) => {
-        const filteredMovies = movieData.filter(movie => {
-            // console.log("MOVIE.GENRES*****", movie.genres)
-            // console.log("GENRE*****", genre)
-            return movie.genres.includes(genre)
-        })
-        // console.log("MOVIES.JS DATA HEREEE====", filteredMovies);
-        if(!acc[genre]) {
-            acc[genre] = []
-        }
-        acc[genre].push(filteredMovies)
-        // movie.genres.includes(genres)
-        return acc
-    }, {});
-    console.log("GENRE MOVIES======", genreMovies);
-
-
+    // const genreMovies = genres.reduce((acc, genre) => {
+    //     const filteredMovies = movieData.filter(movie => {
+    //         // console.log("MOVIE.GENRES*****", movie.genres)
+    //         // console.log("GENRE*****", genre)
+    //         return movie.genres.includes(genre)
+    //     })
+    //     // console.log("MOVIES.JS DATA HEREEE====", filteredMovies);
+    //     if(!acc[genre]) {
+    //         acc[genre] = []
+    //     }
+    //     acc[genre].push(filteredMovies)
+    //     // movie.genres.includes(genres)
+    //     return acc
+    // }, {});
+    // console.log("GENRE MOVIES======", genreMovies);
 
     const movieCards = movieData.map(movie => {
         return (
@@ -44,7 +42,7 @@ const Movies = ({movieData, genres}) => {
     return ( 
         <main>
             <section className='movie-container' >
-                {movieCards}
+                {movieCards }
             </section>
         </main>
     )

@@ -16,14 +16,22 @@ class MovieInfo extends Component {
     constructor(props) {
         super();
         this.state = {
-            movie : props.movie,
+            // movie : props.movie,
+            movie: null,
             videos: null,
             id : props.id,
-            error : props.error
+            // error : props.error
+            error : null
         }
     }
 
-    componentDidMount = () => {        
+    componentDidMount = () => { 
+        fetchIndividualMovie(this.state.id)
+            .then(data => this.setState({movie:data.movie}))
+            .catch(err => {
+                this.setState({error : err});
+            })
+
         fetchMovieTrailer(this.state.id)
             .then(data => {
             this.setState({videos: data.videos});
