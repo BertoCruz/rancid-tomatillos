@@ -11,7 +11,8 @@ class App extends Component {
   constructor(){
     super(); 
     this.state = {
-      movies: [], 
+      movies: [],
+      movieID: [], 
       genres: [],
       error: null
     }
@@ -25,10 +26,12 @@ class App extends Component {
     //at the end of the component did mount, we will setState to the original genres
     // to equal genresList/
     const genresList = []
+    let holdMovies = [];
 
     fetchMoviesData()
       .then(data => {
-        this.setState({movies:data.movies})
+        // this.setState({movies:data.movies})
+        // holdMovies = data.movies;
         for(const movie of data.movies) {
           fetchIndividualMovie(movie.id)
             .then(details => {
@@ -40,15 +43,21 @@ class App extends Component {
 
                 }
               })
-              const movieIndex = this.state.movies.findIndex(oldMovie => oldMovie.id === movie.id)
-              this.setState(prevState => {
-                const newMovies = [...prevState.movies]
-                newMovies.splice(movieIndex, 1, details.movie)
-                return { 
-                  ...prevState, 
-                  movies: newMovies
-                }
-              })
+              // const movieIndex = this.state.movies.findIndex(oldMovie => oldMovie.id === movie.id)
+              // console.log("HOLD MOVIES", holdMovies)
+              // const movieIndex = holdMovies.findIndex(oldMovie => oldMovie.id === movie.id)
+              // this.setState(prevState => {
+              //   const newMovies = [...prevState.movies]
+              //   newMovies.splice(movieIndex, 1, details.movie)
+              //   return { 
+              //     ...prevState, 
+              //     movies: newMovies
+              //   }
+              // })
+              // holdMovies.splice(movieIndex, 1, details.movie)
+              holdMovies.push(details.movie);
+              // console.log("HOLDMOVIES ======", holdMovies);
+              this.setState({movies: holdMovies})
             })
         }
                 
@@ -58,8 +67,8 @@ class App extends Component {
       })
     this.setState({genres: genresList})
     console.log("GENRESLIST ======", genresList);
+    console.log("HOLDMOVIES ======", holdMovies);
   } 
-
  
 
   // componentDidMount(){
