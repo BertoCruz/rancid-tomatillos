@@ -24,6 +24,11 @@
 - Integrating Swiper React Components. 
 
 ## Challenges
+- When trying to implement a 'sort movies by genre carousels' for our home page, we ran into the problems of asynchronous javascript (our code written below). While our React application runs a render every time we `setState()`, we found that passing data down to our `Movies.js` component too early would be a problem in order for us to sort our movies by genre, to then iterate through every movie object in order to add JSX code for rendering (which included adding `<Swiper>` functionality on top of it). The problems with asynchronous fetch calls is where we have gotten stuck and would appreciate if anyone could help us out restructuring this part of our application. The Asynchronous (and nested) fetch calls live in the `componentDidMount()` declaration in our `App.js` file, and our sorting method, originally, lived inside of our `Movies.js` component. We have pondered over (and are open to) the possibility of reworking our component architecture as this could be a way to restructure our genres array to take in JSX syntax for rendering.
+
+```
+
+```
 
 ### Set Up
 1. Clone the following repos
