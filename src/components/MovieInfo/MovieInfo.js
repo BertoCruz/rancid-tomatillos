@@ -48,14 +48,14 @@ class MovieInfo extends Component {
            let url = `https://player.vimeo.com/video/${movie.key}`
             return ( 
                <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}/>
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} keyboard={true}/>
               </SwiperSlide> 
            ) 
         } else {
            let url = `https://www.youtube-nocookie.com/embed/${movie.key}`
             return(
                 <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}/>
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} keyboard={true}/>
                 </SwiperSlide>
             )}
         
@@ -85,14 +85,9 @@ class MovieInfo extends Component {
 
     render = () => {
         if(!this.state.movie){
-            return <main>
-                <p>{this.state.error}</p>
-            </main>
-        }
-        if(this.state.error){
             return <ErrorHandle errorStatus = {this.state.error}/>
         }
-
+        
         let backdropStyling;
         if(this.state.movie.backdrop_path === 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg'){
             backdropStyling = {
