@@ -13,20 +13,20 @@
 }
 
 header {
+    align-items: center;
     background: linear-gradient(318.68deg, #54434b 0%, #43544b 49.72%, #2d3a3a 100%);
-    min-height: 25vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: "Rubik", sans-serif;
     font-size: calc(10px + 2vmin);
+    justify-content: center;
+    min-height: 25vh;
 }
 
 @media (max-width:600px) {
     header{
-        min-height: none;
         font-size: auto;
+        min-height: none;
     }
     .title {
         font-size: inherit;

@@ -1,15 +1,3 @@
-/* :root {
-    --clr-mainBackground: #2d3a3a;
-    --clr-accent: #2ba84a;
-    --clr-offWhite: #faf9f6;
-    --clr-tomatillo: #bfdf8e;
-    --clr-tomatilloSalsa: #bbb085;
-    --clr-cilantro: #43544b;
-    --clr-cilantroCompliment1: #54434b;
-    --clr-cilantroCompliment2: #8e322d;
-    --clr-cilantroLime: #2f8735;
-} */
-
 .movie-container {
     background-color: var(--clr-mainBackground);    
     cursor: default;
