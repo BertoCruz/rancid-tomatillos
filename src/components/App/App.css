@@ -1,6 +1,6 @@
- .title {
-  font-size: 4.2rem;
-  }
+.title {
+    font-size: 4.2rem;
+}
 
 .App {
     text-align: center;
@@ -23,45 +23,43 @@ header {
     min-height: 25vh;
 }
 
-@media (max-width:600px) {
-    header{
+@media (max-width: 600px) {
+    header {
         font-size: auto;
         min-height: none;
     }
     .title {
         font-size: inherit;
-        }
+    }
 }
 
-.active{
+.active {
     background-color: var(--clr-cilantro);
 }
 
-.active:hover{
-    color: var(--clr-cilantroLime)
+.active:hover {
+    color: var(--clr-cilantroLime);
 }
 
 .Navbar {
     background-color: var(--clr-mainBackground);
 }
 
-  @keyframes flicker {
-      
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-        text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #0fa,
-        0 0 80px #0fa,
-        0 0 90px #0fa,
-        0 0 100px #0fa,
-        0 0 150px #0fa;
-    
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa,
+            0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
     }
-    
-    20%, 24%, 55% {        
+
+    20%,
+    24%,
+    55% {
         text-shadow: none;
-    }    
-  } 
+    }
+}

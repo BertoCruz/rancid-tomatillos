@@ -1,5 +1,5 @@
 .movie-container {
-    background-color: var(--clr-mainBackground);    
+    background-color: var(--clr-mainBackground);
     cursor: default;
     display: flex;
     flex-wrap: wrap;
