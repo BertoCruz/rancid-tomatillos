@@ -1,9 +1,9 @@
 .movie-container {
-    background-color: var(--clr-mainBackground);
-    cursor: default;
-    display: flex;
-    flex-wrap: wrap;
-    height: 50%;
-    justify-content: center;
-    padding: 20px;
+  background-color: var(--clr-mainBackground);
+  cursor: default;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+  justify-content: center;
+  padding: 20px;
 }

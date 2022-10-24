@@ -1,29 +1,29 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    color: #bfdf8e;
+  box-sizing: border-box;
+  color: #bfdf8e;
 }
 
 :root {
-    --clr-accent: #2ba84a;
-    --clr-cilantro: #43544b;
-    --clr-cilantroCompliment1: #54434b;
-    --clr-cilantroCompliment2: #8e322d;
-    --clr-cilantroLime: #2f8735;
-    --clr-mainBackground: #2d3a3a;
-    --clr-movieInfoBackground: rgba(75, 75, 75, 0.8);
-    --clr-offWhite: #faf9f6;
-    --clr-tomatillo: #bfdf8e;
-    --clr-tomatilloSalsa: #bbb085;
+  --clr-accent: #2ba84a;
+  --clr-cilantro: #43544b;
+  --clr-cilantroCompliment1: #54434b;
+  --clr-cilantroCompliment2: #8e322d;
+  --clr-cilantroLime: #2f8735;
+  --clr-mainBackground: #2d3a3a;
+  --clr-movieInfoBackground: rgba(75, 75, 75, 0.8);
+  --clr-offWhite: #faf9f6;
+  --clr-tomatillo: #bfdf8e;
+  --clr-tomatilloSalsa: #bbb085;
 }
 
 body {
-    background-color: #2d3a3a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    height: 100vh;
-    margin: 0;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  background-color: #2d3a3a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
