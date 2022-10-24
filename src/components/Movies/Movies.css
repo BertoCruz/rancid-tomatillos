@@ -1,5 +1,4 @@
-:root {
-    /* --clr-fontClr: #248232; */
+/* :root {
     --clr-mainBackground: #2d3a3a;
     --clr-accent: #2ba84a;
     --clr-offWhite: #faf9f6;
@@ -9,15 +8,14 @@
     --clr-cilantroCompliment1: #54434b;
     --clr-cilantroCompliment2: #8e322d;
     --clr-cilantroLime: #2f8735;
-}
+} */
 
 .movie-container {
     background-color: var(--clr-mainBackground);    
-    padding: 20px;
+    cursor: default;
     display: flex;
     flex-wrap: wrap;
-    /* border: 1px solid red; */
     height: 50%;
     justify-content: center;
-    cursor: default;
+    padding: 20px;
 }
