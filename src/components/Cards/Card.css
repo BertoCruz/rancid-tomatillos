@@ -7,7 +7,7 @@
     padding: 10px;
 }
 
-.poster-container {   
+.poster-container {
     border: 5px;
     border-radius: 10px;
     height: 22.5rem;
@@ -15,8 +15,8 @@
     overflow: hidden;
     width: 15rem;
 }
-.poster-container:hover{
-    box-shadow: .3rem .3rem .3rem var(--clr-offWhite);
+.poster-container:hover {
+    box-shadow: 0.3rem 0.3rem 0.3rem var(--clr-offWhite);
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
 }
@@ -34,11 +34,11 @@ img {
 }
 
 p {
-    font-size: 1.0rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
-.tomatillo-rating{
-    height: 20px; 
-    width: 20px; 
+.tomatillo-rating {
+    height: 20px;
+    width: 20px;
 }
