@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ErrorHandle from "../ErrorHandle/ErrorHandle";
 import './MovieInfo.css'
-import { fetchIndividualMovie, fetchMovieTrailer} from '../../api-calls'
+import { fetchMoviesData} from '../../api-calls'
 import ReactPlayer from 'react-player'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard,Scrollbar} from "swiper";
@@ -26,13 +26,13 @@ class MovieInfo extends Component {
     }
 
     componentDidMount = () => { 
-        fetchIndividualMovie(this.state.id)
+        fetchMoviesData(`/${this.state.id}`)
             .then(data => this.setState({movie:data.movie}))
             .catch(err => {
                 this.setState({error : err});
             })
 
-        fetchMovieTrailer(this.state.id)
+        fetchMoviesData(`/${this.state.id}/videos`)
             .then(data => {
             this.setState({videos: data.videos});
             })

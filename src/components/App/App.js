@@ -75,7 +75,7 @@ class App extends Component {
  
 
   componentDidMount(){
-    fetchMoviesData()
+    fetchMoviesData('')
       .then(data => this.setState({movies:data.movies}))
       .catch(err => {
         this.setState({error : err});
