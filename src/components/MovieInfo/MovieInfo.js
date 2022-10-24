@@ -4,7 +4,7 @@ import './MovieInfo.css'
 import { fetchMoviesData} from '../../api-calls'
 import ReactPlayer from 'react-player'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Mousewheel, Keyboard,Scrollbar} from "swiper";
+import { Navigation, Keyboard,Scrollbar} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
@@ -44,14 +44,14 @@ class MovieInfo extends Component {
            let url = `https://player.vimeo.com/video/${movie.key}`
             return ( 
                <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} origin ='http://localhost:3000' />
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id}  />
               </SwiperSlide> 
            ) 
         } else {
            let url = `https://www.youtube-nocookie.com/embed/${movie.key}`
             return(
                 <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} origin ='http://localhost:3000'/>
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} />
                 </SwiperSlide>
             )}
         
@@ -132,7 +132,7 @@ class MovieInfo extends Component {
                                   navigation
                                   keyboard
                                   scrollbar={{ draggable: true }}
-                                  onSwiper={(swiper) => swiper}
+                                  onSwiper={(swiper) => console.log(swiper)}
                                  >
                                 {this.mapVideos()}
                             </Swiper>

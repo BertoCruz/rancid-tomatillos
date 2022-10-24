@@ -136,4 +136,40 @@
 ### Wins
 - Hunter: Finally getting some styling done to our application. 
 
+- Dani: Getting our application style cleaner and closer to our comps.
+
+
+## Friday 10/21/22
+- Today we created:
+    -Hunter Started on importing the videos with react player and a fetch call.  
+    
+- To Do:
+    - Finish Importing videos. 
+
+
+### Challenges:
+- Hunter:Challenge was understanding how a React-Player works. 
+- Dani: Challenge was cypress: understanding how to navigate a webpage with routing.
+
+### Wins
+- Hunter: I was able to get a video to render on the page. 
+
+- Dani: Getting our application style cleaner and closer to our comps. 
+
+
+## Saturday 10/21/22
+- Today we created:
+    -Hunter worked on using the multiple videos that were coming in the fetch call.  
+    
+- To Do:
+    - Finish Importing videos. 
+
+
+### Challenges:
+- Hunter:Challenge was understanding how to make a movie detail page render mulitple movies and how we were goiing to navigate them. 
+- Dani: Challenge was cypress: understanding how to navigate a webpage with routing.
+
+### Wins
+- Hunter: I was able to get a video to render on the page. 
+
 - Dani: Getting our application style cleaner and closer to our comps. 
