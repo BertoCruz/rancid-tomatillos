@@ -82,32 +82,32 @@ class MovieInfo extends Component {
             return `$${formattedAmount}`
         } 
     }
-
-    render = () => {
-        if(!this.state.movie){
-            return <ErrorHandle errorStatus = {this.state.error}/>
-        }
-        
-        let backdropStyling;
+    styleBackdrop = () => {
         if(this.state.movie.backdrop_path === 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg'){
-            backdropStyling = {
+            return {
                 background:'#2d3a3a',
                 backgroundSize:'cover',
                 backgroundPosition:'center center',
                 backgroundRepeat: 'no-repeat'
             }
         } else {
-            backdropStyling = {
+            return {
                 backgroundImage: `url(${this.state.movie.backdrop_path})`,
                 backgroundSize:'cover',
                 backgroundPosition:'center center',
                 backgroundRepeat: 'no-repeat'
             } 
         }
+    }
+
+    render = () => {
+        if(!this.state.movie){
+            return <ErrorHandle errorStatus = {this.state.error}/>
+        }
 
         return (
             <main>
-                <div className="movie-detail-container" style={backdropStyling} >
+                <div className="movie-detail-container" style={this.styleBackdrop()} >
                     <section className="movie-detail-section" >
                         <div className="movie-info-container">
                            <div className="movie-poster-container">

@@ -9,5 +9,4 @@ const fetchMoviesData = (endpoint) => {
         })
 }
 
-
 export { fetchMoviesData };
