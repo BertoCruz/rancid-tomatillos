@@ -7,20 +7,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard,Scrollbar} from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-// import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 
-//change this back to functional component and pass in movies as prop
 class MovieInfo extends Component {
     constructor(props) {
         super();
         this.state = {
-            // movie : props.movie,
             movie: null,
             videos: null,
             id : props.id,
-            // error : props.error
             error : null
         }
     }
@@ -48,14 +44,14 @@ class MovieInfo extends Component {
            let url = `https://player.vimeo.com/video/${movie.key}`
             return ( 
                <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} keyboard={true}/>
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} origin ='http://localhost:3000' />
               </SwiperSlide> 
            ) 
         } else {
            let url = `https://www.youtube-nocookie.com/embed/${movie.key}`
             return(
                 <SwiperSlide className="swiper-slide" key={movie.id}> 
-                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} keyboard={true}/>
+                <ReactPlayer url={url} width='100%' height='100%' className="trailer" controls={true} key={movie.id} origin ='http://localhost:3000'/>
                 </SwiperSlide>
             )}
         
@@ -130,11 +126,11 @@ class MovieInfo extends Component {
                         <div className = "video-container">
                             {this.state.videos && 
                               <Swiper
-                                  modules={[Navigation, Scrollbar]}
+                                  modules={[Navigation, Scrollbar, Keyboard]}
                                   spaceBetween={50}
                                   slidesPerView={1}
                                   navigation
-                                  keyboard={true}
+                                  keyboard
                                   scrollbar={{ draggable: true }}
                                   onSwiper={(swiper) => swiper}
                                  >

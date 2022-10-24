@@ -7,7 +7,6 @@ const ErrorHandle = (props) => {
     console.log("PROPS.ERRORSTATUS===", props);
     return (
         <main className="error-handling">
-            {/* <h2>{props.errorStatus.status} : {props.errorStatus.statusText}</h2> */}
             <img className="tomatillo-animation" src={tomatillo} alt="tomatillo"></img>
             <h2 className='neonText'>{props.errorStatus}</h2>
             <p className='neonText'>Please refresh the page</p>

@@ -1,24 +1,8 @@
-:root {
-    /* --clr-fontClr: #248232; */
-    --clr-mainBackground: #2d3a3a;
-    --clr-accent: #2ba84a;
-    --clr-offWhite: #FAF9F6;
-    --clr-tomatillo: #BFDF8E;
-    --clr-tomatilloSalsa: #BBB085;
-    --clr-cilantro: #43544B;
-    --clr-cilantroCompliment1: #54434B;
-    --clr-cilantroCompliment2: #8E322D;
-    --clr-cilantroLime: #2F8735;
-    --clr-movieInfoBackground: rgba(75, 75, 75 , .8); 
-  }
-
 .movie-detail-container {
     position: absolute;
     display: flex;
     height: 100vh;
     width: 100%;
-    /* justify-content: center; */
-    /* background-color: var(--clr-mainBackground); */
 }
 
 .movie-detail-section {
@@ -59,16 +43,13 @@
     margin-right: 0;
     flex-direction: column;
     align-items: center;
-    /* overflow: scroll; */
     }
 
     .movie-description-container{
         margin-top: 10px;
         overflow: scroll;
     }
-    .movie-detail-section{
-        overflow: scroll;
-    }
+   
     .h1{
         font-size: 30%;
     }
@@ -116,7 +97,7 @@
 }
 
 
-.release-date {
+.release-date  {
     font-size: .9rem;
 }
 
@@ -149,12 +130,9 @@
 }
 /* Movie-video-container*/ 
 .video-container{
-    /* width: 40rem; 
-    height: 50rem; */
     aspect-ratio: 16/9;
     display:flex; 
     justify-content: center;
-    /* margin-left: 23rem; */
     margin-top: 1.5rem;
     background-color: var(--clr-movieInfoBackground);
     padding: 14px;
@@ -169,7 +147,6 @@
     margin-right: 0;
     flex-direction: column;
     align-items: center;
-    /* overflow: scroll; */
     }
 
     .movie-description-container{
