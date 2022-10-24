@@ -13,8 +13,7 @@
 - At any point in the experience a user can navigate back to home using the "Home" button located in the top of the page. 
 - A user can bookmark any movie info page and share it. 
 ## Screenshots 
-- ![Homepage]()
-- ![MovieInfo Page]()
+![Homepage](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Homepage.png)![MovieInfo Page](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Movie-info.png)
 
 ## Possible Future Extensions
 - A possible future extension would navigating a homepage where all the movies will be organized by genre. This would have a scrollable feature so that all the movies, via a specific genre, would display in one row.
@@ -116,9 +115,7 @@ const genreMovies = genres.reduce((acc, genre) => {
     "cypress": "cypress open"
      - npm run cypress
       - You will visit the following pages: 
-![Welcome to Cypress]()
-![Choose a browser]()
-![Navigate through specs]()
+![Welcome to Cypress](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Screen%20Shot%202022-10-24%20at%204.27.54%20PM.png)![Choose a browser](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Screen%20Shot%202022-10-24%20at%204.28.39%20PM.png)![Navigate through specs](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Screen%20Shot%202022-10-24%20at%204.29.45%20PM.png)
 
 
 4. Enter the following url in your browser: http://localhost:3000/
