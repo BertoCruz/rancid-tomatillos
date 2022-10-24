@@ -1,73 +1,58 @@
-:root {
-    --clr-fontClr: #248232;
-    --clr-mainBackground: #2d3a3a;
-    --clr-accent: #2ba84a;
-    --clr-offWhite: #FAF9F6;
-    --clr-tomatillo: #BFDF8E;
-    --clr-tomatilloSalsa: #BBB085;
-    --clr-cilantro: #43544B;
-    --clr-cilantroCompliment1: #54434B;
-    --clr-cilantroCompliment2: #8E322D;
-    --clr-cilantroLime: #2F8735;
-  }
-
 .error-handling {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+  width: 100vw;
 }
 
 .tomatillo-animation {
   height: 30vmin;
-  width: auto;
   pointer-events: none;
+  width: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .tomatillo-animation{
-      animation: tomatillo-animation-spin infinite 10s linear;
+  .tomatillo-animation {
+    animation: tomatillo-animation-spin infinite 10s linear;
   }
 }
 
 @keyframes tomatillo-animation-spin {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .neonText {
-  animation: flicker 1.5s infinite alternate;
   color: #fff;
+  animation: flicker 1.5s infinite alternate;
 }
 
 h1 {
-  font-size: 4.2rem;    
+  font-size: 4.2rem;
 }
 
 /* Flickering animation */
 @keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-  
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa,
+      0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
   }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }

@@ -135,5 +135,82 @@
 
 ### Wins
 - Hunter: Finally getting some styling done to our application. 
+- Dani: Getting our application style cleaner and closer to our comps.
 
-- Dani: Getting our application style cleaner and closer to our comps. 
+
+## Friday 10/21/22
+- Today we created:
+    -We started on importing the videos with react player and a fetch call.  
+    
+- To Do:
+    - Finish Importing videos. 
+    - Be able to organize our movie data according by genre
+
+
+### Challenges:
+- Hunter:Challenge was understanding how a React-Player works. 
+- Dani: Challenge was conceptualizing how to run nested fetch requests to our movies data. One of the biggest challenges is running into asynchronous issues, mainly setting state multiple times and re-rendering our app.
+
+### Wins
+- Hunter: I was able to get a video to render on the page. 
+- Dani: Having understood the blueprint/challenges ahead to running multiple fetches.
+
+
+## Saturday 10/22/22
+- Today we:
+    - worked on using the multiple videos that were coming in the fetch call.  
+    - successfully integrated `Swiper` and `react-player` to our `MovieDetails.js` component
+    
+- To Do:
+    - Finish Importing videos, using `Swiper`
+    - build a work around with taking in vimeo videos as well.
+    - code out the fetch calls, organize/sort the movie objects by genre. 
+
+
+### Challenges:
+- Hunter:Challenge was understanding how to make a movie detail page render multiple movies and how we were going to navigate them. 
+- Dani: Running into problems with building an asynchronous fetch call design! Another challenge being that all of the fetch calls (for individual movie details) will need to update the previous state of every movie object to fill in the extra movie details. 
+
+### Wins
+- Hunter: Learning React Swiper. 
+- Dani: Getting a running `componentDidMount()` to build our state to hold all movie objects, but now with the extra detailed data.
+
+## Sunday 10/23/22
+- Today we:
+    - Made our page fully responsive!
+    - upgraded our error handling
+
+- To Do:
+    - Finish Importing videos.
+    - Refactor Cypress testing  
+    - Finish listing all movies by genres
+
+
+### Challenges:
+- Hunter: Not understanding what was happening asynchronously with out fetch calls, and now knowing how to fix the problems we were receiving.
+- Dani: Feeling like our `componentDidMount()` is loaded with too many fetch calls. We are setting state constantly which is causing our data to pass down the wrong data to our components, and thus making it render the wrong information (or console logging errors). Asynchronous is the name of the game and I just feel like I do not yet have the right amount of understanding to troubleshoot this. I noticed the data that `App.js` was fetching and settingState to was passing down the wrong data, because of asynchronous issues, because I tried running a `reduce()` iterator on the movie data and it wasn't able to read the property of genres. This was all due to the wrong information getting passed down. `App.js` was passing down the original movie data without the added extra details, that an individualMovie data fetch would retrieve. So, this caused us to reconsider how we are actually setting state.
+
+### Wins
+- Hunter: Getting our CSS to be completely responsive.
+- Dani: Win was understanding the problems we faced with running asynchronous calls and using this as a leverage to build on that knowledge. Also, a big win was getting our page to be fully responsive and achieving a 100% accessibility score.
+
+
+## Monday 10/24/22
+- Today we:
+    - Completed our Cypress testing, including:
+        - Video container for our trailer videos
+        - testing for our error handling pages
+
+- To Do:
+    - Finish Importing videos.
+    - Refactor Cypress testing  
+    - Finish listing all movies by genres
+
+
+### Challenges:
+- Hunter: Trying to get the cypress testing for the play button on the YouTube video. 
+- Dani: Trying to get some sort of test to check the user functionality of playing a video inside the trailers container. Also, testing for navigating the Swiper arrows  
+
+### Wins
+- Hunter: Finishing our project to a good state!!!!!
+- Dani: Feeling proud of our application and finishing strong!
