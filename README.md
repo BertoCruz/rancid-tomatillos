@@ -2,16 +2,26 @@
 # Rancid Tomatillos
 
 ## Abstract
-  - 
+  - This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different! In this App, we exercised our React muscles, we started by creating a React app and followed the modular/component file-structure. We integrated third party libraries like React-Player and Swiper. We also used  the third party library React-Routing V5 to insure that our urls are consistent with the page being rendered. We used Cypress testing to test our applications UI/UX functionality. We hope you enjoy navigating our application! 
 
 ## Technologies
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## Features
-
+- The homepage features a list of cards displaying movie information from an external API. 
+- When a user clicks a card the url updates to display the change and you are taken to a movie information page. The movie information page contains all of the movies details as well as video trailers for each movie. 
+- At any point in the experience a user can navigate back to home using the "Home" button located in the top of the page. 
+- A user can bookmark any movie info page and share it. 
 ## Possible Future Extensions
+- A possible future extension would navigating a homepage where all the movies will be organized by genre. This would have a scrollable feature so that all the movies, via a specific genre, would display in one row.
+- Creating a search bar that would allow users to quickly find a specific movie in the database. 
+- Creating a login and allowing users to save and rate movies. 
 
 ## Milestones
+- Getting data from fetch calls and setting it to the state. 
+- Getting our components routed by using React-Router. 
+- Integrating React-Player. 
+- Integrating Swiper React Components. 
 
 ## Challenges
 
