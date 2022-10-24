@@ -24,10 +24,73 @@
 - Integrating Swiper React Components. 
 
 ## Challenges
-- When trying to implement a 'sort movies by genre carousels' for our home page, we ran into the problems of asynchronous javascript (our code written below). While our React application runs a render every time we `setState()`, we found that passing data down to our `Movies.js` component too early would be a problem in order for us to sort our movies by genre, to then iterate through every movie object in order to add JSX code for rendering (which included adding `<Swiper>` functionality on top of it). The problems with asynchronous fetch calls is where we have gotten stuck and would appreciate if anyone could help us out restructuring this part of our application. The Asynchronous (and nested) fetch calls live in the `componentDidMount()` declaration in our `App.js` file, and our sorting method, originally, lived inside of our `Movies.js` component. We have pondered over (and are open to) the possibility of reworking our component architecture as this could be a way to restructure our genres array to take in JSX syntax for rendering.
+- When trying to implement a 'sort movies' by genre carousels for our home page, we ran into the problems of asynchronous javascript (our code written below). While our React application runs a render every time we `setState()`, we found that passing data down to our `Movies.js` component too early would be a problem in order for us to sort our movies by genre, to then iterate through every movie object in order to add JSX code for rendering (which included adding `<Swiper>` functionality on top of it). The problems with asynchronous fetch calls is where we have gotten stuck and would appreciate if anyone could help us out restructuring this part of our application. The Asynchronous (and nested) fetch calls live in the `componentDidMount()` declaration in our `App.js` file, and our sorting method, originally, lived inside of our `Movies.js` component. We have pondered over (and are open to) the possibility of reworking our component architecture as this could be a way to restructure our genres array to take in JSX syntax for rendering.
+You will find this code living in our `Feat/Scrollable-Genres` branch.
 
+`App.js`
+```
+componentDidMount() {
+  const genresList = [];
+  let holdMovies = [];
+
+  fetchMoviesData()
+    .then((data) => {
+      this.setState({ movies: data.movies });
+      // A different route is to just declare a variable to hold all of
+      //the movie objects before we setState?
+      // holdMovies = data.movies;
+
+      for (const movie of data.movies) {
+        fetchIndividualMovie(movie.id)
+          .then((details) => {
+            details.movie.genres.forEach((genre) => {
+              if (!genresList.includes(genre)) {
+                genresList.push(genre);
+              }
+            });
+            const movieIndex = this.state.movies.findIndex(
+              (oldMovie) => oldMovie.id === movie.id
+            );
+            this.setState((prevState) => {
+              const newMovies = [...prevState.movies];
+              newMovies.splice(movieIndex, 1, details.movie);
+              return {
+                ...prevState,
+                movies: newMovies,
+              };
+            });
+
+            // Possible work around is to just push in every individual movie from this fetch loop
+            // into it’s own movie container so as to setState to our movies in the end?
+            // holdMovies.push(details.movie);
+            // this.setState({ movies: holdMovies });
+          })
+          .catch((err) => {
+            this.setState({ error: err });
+          });
+      }
+    })
+    .catch((err) => {
+      this.setState({ error: err });
+    });
+  this.setState({ genres: genresList });
+}
 ```
 
+`Movies.js`
+```
+//Run a reduce iterator to iterate through all genres and movieData props
+// in order to sort movie ojects into an array, by the key of genres
+const genreMovies = genres.reduce((acc, genre) => {
+        const filteredMovies = movieData.filter(movie => {
+            return movie.genres.includes(genre)
+        })
+        if(!acc[genre]) {
+            acc[genre] = []
+        }
+        acc[genre].push(filteredMovies)
+        return acc
+    }, {});
 ```
 
 ### Set Up
