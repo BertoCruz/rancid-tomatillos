@@ -14,6 +14,8 @@
 - A user can bookmark any movie info page and share it. 
 ## Screenshots 
 ![Homepage](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Homepage.png)![MovieInfo Page](https://github.com/BertoCruz/rancid-tomatillos/blob/main/src/images/Movie-info.png)
+![giphy](https://user-images.githubusercontent.com/102885322/197645864-8c346f54-1edf-45f7-94a5-df2350790ea3.gif)
+
 
 ## Possible Future Extensions
 - A possible future extension would navigating a homepage where all the movies will be organized by genre. This would have a scrollable feature so that all the movies, via a specific genre, would display in one row.
